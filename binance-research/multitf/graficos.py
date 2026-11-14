@@ -147,23 +147,26 @@ def capital(d):
     eq = 100 * (1 + d).cumprod()
     x = pd.PeriodIndex(eq.index, freq="M").to_timestamp(how="end")
     fig, ax = plt.subplots(figsize=(11, 4.6))
-    for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
-        ax.plot(x, eq[k], color=c, lw=2.2)
-    end_labels(ax, x, {k: eq[k].iloc[-1] for k in ("btc", "otras", "final", "nueva")},
-               {"nueva": f"{N_NEW}: {eq['nueva'].iloc[-1]:,.0f} USDT".replace(",", "."),
-                "final": f"{N_FIN}: {eq['final'].iloc[-1]:,.0f} USDT".replace(",", "."),
-                "otras": f"{N_OLD}: {eq['otras'].iloc[-1]:,.0f} USDT".replace(",", "."),
-                "btc": f"{N_BTC}: {eq['btc'].iloc[-1]:,.0f} USDT".replace(",", ".")}, log=True)
+    cols = {"btc": AQUA, "otras": GREY, "final": ORANGE, "nueva": BLUE}
+    names = {"btc": N_BTC, "otras": N_OLD, "final": N_FIN, "nueva": N_NEW}
+    for k in ("otras", "btc", "final", "nueva"):
+        ax.plot(x, eq[k], color=cols[k], lw=2.2, zorder=3)
+        ax.scatter([x[-1]], [eq[k].iloc[-1]], color=cols[k], s=22, zorder=4)
+    handles = [plt.Line2D([], [], color=cols[k], lw=3, label=f"{names[k]}: {eq[k].iloc[-1]:,.0f} USDT".replace(",", "."))
+               for k in ("nueva", "final", "btc", "otras")]
     ax.set_yscale("log")
+    ax.set_ylim(100, 1000)
     ax.set_yticks([100, 200, 300, 500, 700], ["100", "200", "300", "500", "700"])
     ax.minorticks_off()
     ax.yaxis.grid(True, color=GRID, lw=0.8)
-    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
+    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=60))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Capital (USDT, escala logarítmica)")
-    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)")
+    leg = ax.legend(handles=handles, loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=2, frameon=False, fontsize=9.5,
+                    handlelength=2.6, columnspacing=1.6)
+    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)", pad=44)
     fig.tight_layout()
-    fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160)
+    fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160, bbox_inches="tight")
     dd = 100 * (eq / eq.cummax() - 1)
     fig, ax = plt.subplots(figsize=(11, 3.4))
     for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
