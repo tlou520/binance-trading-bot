@@ -171,16 +171,17 @@ def capital(d):
     fig, ax = plt.subplots(figsize=(11, 3.4))
     for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
         ax.plot(x, dd[k], color=c, lw=2.2)
-    end_labels(ax, x, {k: dd[k].iloc[-1] for k in ("btc", "otras", "final", "nueva")},
-               {k: f"{n}: peor {pct(dd[k].min())}" for k, n in (("nueva", N_NEW), ("final", N_FIN), ("otras", N_OLD), ("btc", N_BTC))},
-               log=False)
+    hd = [plt.Line2D([], [], color=c, lw=2.4, label=f"{n}\npeor caída {pct(dd[k].min())}")
+          for k, c, n in (("nueva", BLUE, N_NEW), ("final", ORANGE, N_FIN), ("otras", GREY, N_OLD), ("btc", AQUA, N_BTC))]
+    ax.legend(handles=hd, loc="upper left", bbox_to_anchor=(1.02, 1.0), frameon=False, fontsize=8.5,
+              handlelength=1.8, handletextpad=0.8, labelspacing=1.2, borderaxespad=0)
     ax.yaxis.grid(True, color=GRID, lw=0.8)
-    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
+    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=30))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Caída desde el máximo (%)")
-    ax.set_title("Caída desde el máximo anterior, medida a fin de mes")
+    ax.set_title("Caída desde el máximo anterior, medida a fin de mes", loc="left")
     fig.tight_layout()
-    fig.savefig(os.path.join(IMG, "mt-caida.png"), dpi=160)
+    fig.savefig(os.path.join(IMG, "mt-caida.png"), dpi=160, bbox_inches="tight")
 
 
 if __name__ == "__main__":
