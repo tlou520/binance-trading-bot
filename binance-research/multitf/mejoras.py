@@ -24,7 +24,7 @@ OUT = os.path.join(E.HERE, "output")
 END = "2026-11-13"
 YEARS = [2024, 2025, 2026]
 H = pd.Timedelta(hours=1)
-QS = (0.9, 0.95, 0.98)
+QS = (0.02, 0.05, 0.1, 0.9, 0.95, 0.98)
 META = ["pred", "exc", "perf30", "win30", "n30", "btc_reg", "atr", "r7d", "r30d", "btc_r7d", "rv1h", "d_dema50"]
 
 
@@ -61,33 +61,42 @@ def add_barriers(P, ksl=2.0, ktp=4.0):
         h["tb_be"] = (sl + E.COST) / (sl + tp)             # probabilidad mínima para no perder
 
 
-def predict(P, periods, target="y24", window=None, clf=False):
+def predict(P, periods, target="y24", window=None, clf=False, gap=26, mask=None, min_rows=20000, seeds=(0,)):
     """Para cada periodo (t0, t1) entrena solo con datos anteriores a t0 (los últimos `window` meses si se indica)
-    y predice el periodo. El 20 % final del entrenamiento fija los umbrales. Devuelve predicciones y umbrales."""
+    y predice el periodo. El 20 % final del entrenamiento fija los umbrales. Devuelve predicciones y umbrales.
+    `gap` son las horas de separación entre entrenamiento y periodo juzgado (más que el horizonte del objetivo).
+    `seeds`: con varias semillas se promedian las predicciones de varios modelos.
+    `mask` ({moneda: serie booleana}) limita las horas con las que se entrena y predice (modelo por régimen)."""
     import lightgbm as lgb
-    X = pd.concat([P[s][E.FEATS + [target]] for s in E.COINS]).dropna(subset=[target, "r30d"])
+    ok = {s: (P[s].r30d.notna() if mask is None else P[s].r30d.notna() & mask[s]) for s in E.COINS}
+    X = pd.concat([P[s].loc[ok[s], E.FEATS + [target]] for s in E.COINS]).dropna(subset=[target])
     pred = {s: pd.Series(np.nan, index=P[s].index) for s in E.COINS}
     lim = pd.DataFrame(np.nan, index=P["BTC"].index, columns=list(QS))
     kw = dict(n_estimators=300, learning_rate=0.03, num_leaves=15, min_child_samples=500, subsample=0.7,
-              subsample_freq=1, colsample_bytree=0.7, reg_lambda=5.0, random_state=0, verbose=-1, n_jobs=4)
+              subsample_freq=1, colsample_bytree=0.7, reg_lambda=5.0, verbose=-1, n_jobs=4)
     for t0, t1 in periods:
-        tr = X[X.index < t0 - 26 * H]
+        tr = X[X.index < t0 - gap * H]
         if window:
             tr = tr[tr.index >= t0 - pd.DateOffset(months=window)]
+        if len(tr) < min_rows:                             # muy pocos datos previos: no se opera ese periodo
+            continue
         u = tr.index.unique().sort_values()
         cut = u[int(len(u) * 0.8)]
-        fit, val = tr[tr.index < cut - 26 * H], tr[tr.index >= cut]
-        mdl = (lgb.LGBMClassifier if clf else lgb.LGBMRegressor)(**kw).fit(fit[E.FEATS], fit[target])
-        f = (lambda x: mdl.predict_proba(x)[:, 1]) if clf else mdl.predict
+        fit, val = tr[tr.index < cut - gap * H], tr[tr.index >= cut]
+        mdls = [(lgb.LGBMClassifier if clf else lgb.LGBMRegressor)(random_state=sd, **kw).fit(fit[E.FEATS], fit[target])
+                for sd in seeds]
+
+        def f(x, mdls=mdls):
+            return np.mean([m.predict_proba(x)[:, 1] if clf else m.predict(x) for m in mdls], axis=0)
         lim.loc[(lim.index >= t0) & (lim.index < t1)] = np.quantile(f(val[E.FEATS]), QS)
         for s in E.COINS:
-            te = P[s][(P[s].index >= t0) & (P[s].index < t1) & P[s].r30d.notna()]
+            te = P[s][(P[s].index >= t0) & (P[s].index < t1) & ok[s]]
             if len(te):
                 pred[s].loc[te.index] = f(te[E.FEATS])
     return pred, lim
 
 
-def trades(P, pred, lim, q=0.95, filt=None, barrier=False, prob=False):
+def trades(P, pred, lim, q=0.95, filt=None, barrier=False, prob=False, hold=24):
     """Una operación a la vez por moneda. Entra si la predicción supera el umbral de validación y el mínimo
     rentable (el costo, o la probabilidad de equilibrio si el modelo predice probabilidad: `prob`).
     Con `barrier` sale por stop u objetivo en vez de a las 24 h."""
@@ -98,8 +107,8 @@ def trades(P, pred, lim, q=0.95, filt=None, barrier=False, prob=False):
         sig = pred[s].values > np.maximum(lim[q].values, floor)
         if filt is not None:
             sig &= filt[s].values
-        r = (h.tb_ret if barrier else h.y24).values
-        k = h.tb_k.values if barrier else np.full(len(h), 24)
+        r = (h.tb_ret if barrier else h[f"y{hold}"]).values
+        k = h.tb_k.values if barrier else np.full(len(h), hold)
         T, free = h.index, 0
         for i in np.flatnonzero(sig):
             if i < free or np.isnan(r[i]):

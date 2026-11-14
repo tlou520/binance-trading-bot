@@ -1,0 +1,2192 @@
+{
+ "tablas": {
+  "G": [
+   {
+    "año": 2023,
+    "operaciones": 173,
+    "acierto_%": 56.1,
+    "media_neta_%": 2.18,
+    "ganancia_%": 80.31,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 243,
+    "acierto_%": 57.2,
+    "media_neta_%": 2.283,
+    "ganancia_%": 112.3,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 56,
+    "acierto_%": 55.4,
+    "media_neta_%": 1.78,
+    "ganancia_%": 17.55,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 57,
+    "acierto_%": 40.4,
+    "media_neta_%": 0.782,
+    "ganancia_%": 6.56,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 529,
+    "acierto_%": 54.8,
+    "media_neta_%": 2.034,
+    "ganancia_%": 379.52,
+    "meses_positivos": "27/47",
+    "meses_negativos": 14,
+    "meses_sin_operar": 6
+   }
+  ],
+  "10": [
+   {
+    "año": 2023,
+    "operaciones": 154,
+    "acierto_%": 55.2,
+    "media_neta_%": 2.257,
+    "ganancia_%": 71.94,
+    "meses_positivos": "7/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 243,
+    "acierto_%": 57.2,
+    "media_neta_%": 2.283,
+    "ganancia_%": 112.3,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 50,
+    "acierto_%": 50.0,
+    "media_neta_%": 1.485,
+    "ganancia_%": 12.79,
+    "meses_positivos": "7/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": 2026,
+    "operaciones": 57,
+    "acierto_%": 40.4,
+    "media_neta_%": 0.782,
+    "ganancia_%": 6.56,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 504,
+    "acierto_%": 54.0,
+    "media_neta_%": 2.026,
+    "ganancia_%": 338.72,
+    "meses_positivos": "24/47",
+    "meses_negativos": 16,
+    "meses_sin_operar": 7
+   }
+  ],
+  "10b": [
+   {
+    "año": 2023,
+    "operaciones": 142,
+    "acierto_%": 54.9,
+    "media_neta_%": 2.398,
+    "ganancia_%": 69.95,
+    "meses_positivos": "7/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 243,
+    "acierto_%": 57.2,
+    "media_neta_%": 2.283,
+    "ganancia_%": 112.3,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 56,
+    "acierto_%": 55.4,
+    "media_neta_%": 1.78,
+    "ganancia_%": 17.55,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 57,
+    "acierto_%": 40.4,
+    "media_neta_%": 0.782,
+    "ganancia_%": 6.56,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 498,
+    "acierto_%": 54.4,
+    "media_neta_%": 2.088,
+    "ganancia_%": 351.99,
+    "meses_positivos": "25/47",
+    "meses_negativos": 16,
+    "meses_sin_operar": 6
+   }
+  ],
+  "9": [
+   {
+    "año": 2023,
+    "operaciones": 163,
+    "acierto_%": 54.0,
+    "media_neta_%": 2.135,
+    "ganancia_%": 72.7,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 223,
+    "acierto_%": 56.5,
+    "media_neta_%": 2.327,
+    "ganancia_%": 103.79,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 56,
+    "acierto_%": 55.4,
+    "media_neta_%": 1.78,
+    "ganancia_%": 17.55,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 57,
+    "acierto_%": 40.4,
+    "media_neta_%": 0.782,
+    "ganancia_%": 6.56,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 499,
+    "acierto_%": 53.7,
+    "media_neta_%": 2.027,
+    "ganancia_%": 340.86,
+    "meses_positivos": "27/47",
+    "meses_negativos": 14,
+    "meses_sin_operar": 6
+   }
+  ],
+  "8": [
+   {
+    "año": 2023,
+    "operaciones": 175,
+    "acierto_%": 56.6,
+    "media_neta_%": 2.28,
+    "ganancia_%": 86.0,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 248,
+    "acierto_%": 56.0,
+    "media_neta_%": 2.151,
+    "ganancia_%": 104.99,
+    "meses_positivos": "6/12",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 56,
+    "acierto_%": 55.4,
+    "media_neta_%": 1.78,
+    "ganancia_%": 17.55,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 65,
+    "acierto_%": 36.9,
+    "media_neta_%": 0.201,
+    "ganancia_%": 0.82,
+    "meses_positivos": "4/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": "Total",
+    "operaciones": 544,
+    "acierto_%": 53.9,
+    "media_neta_%": 1.921,
+    "ganancia_%": 351.87,
+    "meses_positivos": "28/47",
+    "meses_negativos": 16,
+    "meses_sin_operar": 3
+   }
+  ],
+  "8b": [
+   {
+    "año": 2023,
+    "operaciones": 181,
+    "acierto_%": 56.9,
+    "media_neta_%": 2.198,
+    "ganancia_%": 85.63,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 268,
+    "acierto_%": 58.6,
+    "media_neta_%": 2.448,
+    "ganancia_%": 151.14,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 56,
+    "acierto_%": 55.4,
+    "media_neta_%": 1.78,
+    "ganancia_%": 17.55,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 75,
+    "acierto_%": 34.7,
+    "media_neta_%": -0.504,
+    "ganancia_%": -8.22,
+    "meses_positivos": "4/11",
+    "meses_negativos": 7,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 580,
+    "acierto_%": 54.7,
+    "media_neta_%": 1.924,
+    "ganancia_%": 403.01,
+    "meses_positivos": "29/47",
+    "meses_negativos": 16,
+    "meses_sin_operar": 2
+   }
+  ],
+  "7a": [
+   {
+    "año": 2023,
+    "operaciones": 173,
+    "acierto_%": 54.9,
+    "media_neta_%": 2.036,
+    "ganancia_%": 73.33,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 246,
+    "acierto_%": 49.6,
+    "media_neta_%": 1.964,
+    "ganancia_%": 87.97,
+    "meses_positivos": "4/12",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 60,
+    "acierto_%": 58.3,
+    "media_neta_%": 1.977,
+    "ganancia_%": 20.59,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 58,
+    "acierto_%": 37.9,
+    "media_neta_%": 0.499,
+    "ganancia_%": 3.8,
+    "meses_positivos": "2/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 537,
+    "acierto_%": 51.0,
+    "media_neta_%": 1.83,
+    "ganancia_%": 307.81,
+    "meses_positivos": "23/47",
+    "meses_negativos": 18,
+    "meses_sin_operar": 6
+   }
+  ],
+  "7b": [
+   {
+    "año": 2023,
+    "operaciones": 183,
+    "acierto_%": 55.2,
+    "media_neta_%": 2.091,
+    "ganancia_%": 81.86,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 257,
+    "acierto_%": 56.0,
+    "media_neta_%": 2.078,
+    "ganancia_%": 108.65,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 59,
+    "acierto_%": 52.5,
+    "media_neta_%": 1.86,
+    "ganancia_%": 19.42,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 61,
+    "acierto_%": 44.3,
+    "media_neta_%": 0.698,
+    "ganancia_%": 6.33,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 560,
+    "acierto_%": 54.1,
+    "media_neta_%": 1.909,
+    "ganancia_%": 381.82,
+    "meses_positivos": "27/47",
+    "meses_negativos": 14,
+    "meses_sin_operar": 6
+   }
+  ],
+  "7": [
+   {
+    "año": 2023,
+    "operaciones": 183,
+    "acierto_%": 54.6,
+    "media_neta_%": 2.053,
+    "ganancia_%": 79.57,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 261,
+    "acierto_%": 49.4,
+    "media_neta_%": 1.784,
+    "ganancia_%": 86.23,
+    "meses_positivos": "4/12",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 64,
+    "acierto_%": 56.2,
+    "media_neta_%": 1.941,
+    "ganancia_%": 21.69,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 62,
+    "acierto_%": 40.3,
+    "media_neta_%": 0.226,
+    "ganancia_%": 1.61,
+    "meses_positivos": "2/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 570,
+    "acierto_%": 50.9,
+    "media_neta_%": 1.718,
+    "ganancia_%": 313.49,
+    "meses_positivos": "23/47",
+    "meses_negativos": 18,
+    "meses_sin_operar": 6
+   }
+  ],
+  "7c": [
+   {
+    "año": 2023,
+    "operaciones": 200,
+    "acierto_%": 49.5,
+    "media_neta_%": 1.124,
+    "ganancia_%": 42.25,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 337,
+    "acierto_%": 47.5,
+    "media_neta_%": 1.278,
+    "ganancia_%": 82.01,
+    "meses_positivos": "5/12",
+    "meses_negativos": 7,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 78,
+    "acierto_%": 48.7,
+    "media_neta_%": 0.674,
+    "ganancia_%": 8.19,
+    "meses_positivos": "6/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 73,
+    "acierto_%": 37.0,
+    "media_neta_%": -0.012,
+    "ganancia_%": -0.65,
+    "meses_positivos": "1/11",
+    "meses_negativos": 7,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 688,
+    "acierto_%": 47.1,
+    "media_neta_%": 1.027,
+    "ganancia_%": 178.28,
+    "meses_positivos": "20/47",
+    "meses_negativos": 21,
+    "meses_sin_operar": 6
+   }
+  ],
+  "6b": [
+   {
+    "año": 2023,
+    "operaciones": 5,
+    "acierto_%": 60.0,
+    "media_neta_%": 3.865,
+    "ganancia_%": 3.23,
+    "meses_positivos": "2/12",
+    "meses_negativos": 0,
+    "meses_sin_operar": 10
+   },
+   {
+    "año": 2024,
+    "operaciones": 14,
+    "acierto_%": 78.6,
+    "media_neta_%": 4.541,
+    "ganancia_%": 10.81,
+    "meses_positivos": "2/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 8
+   },
+   {
+    "año": 2025,
+    "operaciones": 20,
+    "acierto_%": 50.0,
+    "media_neta_%": 0.616,
+    "ganancia_%": 2.05,
+    "meses_positivos": "3/12",
+    "meses_negativos": 1,
+    "meses_sin_operar": 8
+   },
+   {
+    "año": 2026,
+    "operaciones": 22,
+    "acierto_%": 36.4,
+    "media_neta_%": -2.603,
+    "ganancia_%": -9.92,
+    "meses_positivos": "1/11",
+    "meses_negativos": 2,
+    "meses_sin_operar": 8
+   },
+   {
+    "año": "Total",
+    "operaciones": 61,
+    "acierto_%": 52.5,
+    "media_neta_%": 0.622,
+    "ganancia_%": 5.16,
+    "meses_positivos": "8/47",
+    "meses_negativos": 5,
+    "meses_sin_operar": 34
+   }
+  ],
+  "6": [
+   {
+    "año": 2023,
+    "operaciones": 178,
+    "acierto_%": 56.2,
+    "media_neta_%": 2.227,
+    "ganancia_%": 85.38,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 247,
+    "acierto_%": 57.5,
+    "media_neta_%": 2.32,
+    "ganancia_%": 118.01,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 76,
+    "acierto_%": 53.9,
+    "media_neta_%": 1.473,
+    "ganancia_%": 19.99,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 75,
+    "acierto_%": 41.3,
+    "media_neta_%": 0.041,
+    "ganancia_%": -1.13,
+    "meses_positivos": "4/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": "Total",
+    "operaciones": 576,
+    "acierto_%": 54.5,
+    "media_neta_%": 1.883,
+    "ganancia_%": 379.48,
+    "meses_positivos": "30/47",
+    "meses_negativos": 15,
+    "meses_sin_operar": 2
+   }
+  ],
+  "5": [
+   {
+    "año": 2023,
+    "operaciones": 72,
+    "acierto_%": 56.9,
+    "media_neta_%": 3.438,
+    "ganancia_%": 47.55,
+    "meses_positivos": "6/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2024,
+    "operaciones": 108,
+    "acierto_%": 59.3,
+    "media_neta_%": 5.404,
+    "ganancia_%": 125.72,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 11,
+    "acierto_%": 54.5,
+    "media_neta_%": -0.421,
+    "ganancia_%": -0.9,
+    "meses_positivos": "2/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 8
+   },
+   {
+    "año": 2026,
+    "operaciones": 32,
+    "acierto_%": 34.4,
+    "media_neta_%": 0.436,
+    "ganancia_%": 1.04,
+    "meses_positivos": "1/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 5
+   },
+   {
+    "año": "Total",
+    "operaciones": 223,
+    "acierto_%": 54.7,
+    "media_neta_%": 3.769,
+    "ganancia_%": 233.48,
+    "meses_positivos": "16/47",
+    "meses_negativos": 16,
+    "meses_sin_operar": 15
+   }
+  ],
+  "5b": [
+   {
+    "año": 2023,
+    "operaciones": 245,
+    "acierto_%": 56.3,
+    "media_neta_%": 2.549,
+    "ganancia_%": 63.43,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2024,
+    "operaciones": 351,
+    "acierto_%": 57.8,
+    "media_neta_%": 3.243,
+    "ganancia_%": 120.03,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 67,
+    "acierto_%": 55.2,
+    "media_neta_%": 1.419,
+    "ganancia_%": 8.02,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 89,
+    "acierto_%": 38.2,
+    "media_neta_%": 0.658,
+    "ganancia_%": 3.83,
+    "meses_positivos": "1/11",
+    "meses_negativos": 7,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 752,
+    "acierto_%": 54.8,
+    "media_neta_%": 2.549,
+    "ganancia_%": 303.33,
+    "meses_positivos": "24/47",
+    "meses_negativos": 17,
+    "meses_sin_operar": 6
+   }
+  ],
+  "4": [
+   {
+    "año": 2023,
+    "operaciones": 169,
+    "acierto_%": 58.6,
+    "media_neta_%": 2.308,
+    "ganancia_%": 82.6,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 151,
+    "acierto_%": 57.6,
+    "media_neta_%": 3.318,
+    "ganancia_%": 107.23,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2025,
+    "operaciones": 114,
+    "acierto_%": 60.5,
+    "media_neta_%": 0.84,
+    "ganancia_%": 16.68,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2026,
+    "operaciones": 63,
+    "acierto_%": 38.1,
+    "media_neta_%": 0.632,
+    "ganancia_%": 5.92,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 497,
+    "acierto_%": 56.1,
+    "media_neta_%": 2.066,
+    "ganancia_%": 367.68,
+    "meses_positivos": "28/47",
+    "meses_negativos": 14,
+    "meses_sin_operar": 5
+   }
+  ],
+  "3": [
+   {
+    "año": 2023,
+    "operaciones": 178,
+    "acierto_%": 53.9,
+    "media_neta_%": 1.946,
+    "ganancia_%": 71.97,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 240,
+    "acierto_%": 53.3,
+    "media_neta_%": 2.108,
+    "ganancia_%": 100.46,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 61,
+    "acierto_%": 54.1,
+    "media_neta_%": 1.236,
+    "ganancia_%": 12.96,
+    "meses_positivos": "8/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 2
+   },
+   {
+    "año": 2026,
+    "operaciones": 59,
+    "acierto_%": 35.6,
+    "media_neta_%": 0.416,
+    "ganancia_%": 3.13,
+    "meses_positivos": "3/11",
+    "meses_negativos": 5,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 538,
+    "acierto_%": 51.7,
+    "media_neta_%": 1.77,
+    "ganancia_%": 301.64,
+    "meses_positivos": "27/47",
+    "meses_negativos": 15,
+    "meses_sin_operar": 5
+   }
+  ],
+  "2b": [
+   {
+    "año": 2023,
+    "operaciones": 3,
+    "acierto_%": 66.7,
+    "media_neta_%": -0.053,
+    "ganancia_%": -0.03,
+    "meses_positivos": "2/12",
+    "meses_negativos": 1,
+    "meses_sin_operar": 9
+   },
+   {
+    "año": 2024,
+    "operaciones": 40,
+    "acierto_%": 30.0,
+    "media_neta_%": -1.658,
+    "ganancia_%": -10.64,
+    "meses_positivos": "0/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 8
+   },
+   {
+    "año": 2025,
+    "operaciones": 101,
+    "acierto_%": 56.4,
+    "media_neta_%": 0.401,
+    "ganancia_%": 6.29,
+    "meses_positivos": "2/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 7
+   },
+   {
+    "año": 2026,
+    "operaciones": 96,
+    "acierto_%": 45.8,
+    "media_neta_%": -0.176,
+    "ganancia_%": -2.99,
+    "meses_positivos": "2/11",
+    "meses_negativos": 4,
+    "meses_sin_operar": 5
+   },
+   {
+    "año": "Total",
+    "operaciones": 240,
+    "acierto_%": 47.9,
+    "media_neta_%": -0.179,
+    "ganancia_%": -7.89,
+    "meses_positivos": "6/47",
+    "meses_negativos": 12,
+    "meses_sin_operar": 29
+   }
+  ],
+  "2": [
+   {
+    "año": 2023,
+    "operaciones": 176,
+    "acierto_%": 56.2,
+    "media_neta_%": 2.142,
+    "ganancia_%": 80.37,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 271,
+    "acierto_%": 54.6,
+    "media_neta_%": 1.986,
+    "ganancia_%": 107.65,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 157,
+    "acierto_%": 56.1,
+    "media_neta_%": 0.893,
+    "ganancia_%": 24.96,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 153,
+    "acierto_%": 43.8,
+    "media_neta_%": 0.181,
+    "ganancia_%": 3.37,
+    "meses_positivos": "3/11",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 757,
+    "acierto_%": 53.1,
+    "media_neta_%": 1.431,
+    "ganancia_%": 383.8,
+    "meses_positivos": "28/47",
+    "meses_negativos": 19,
+    "meses_sin_operar": 0
+   }
+  ],
+  "2c": [
+   {
+    "año": 2023,
+    "operaciones": 220,
+    "acierto_%": 56.8,
+    "media_neta_%": 1.911,
+    "ganancia_%": 92.39,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 245,
+    "acierto_%": 49.4,
+    "media_neta_%": 0.124,
+    "ganancia_%": -2.18,
+    "meses_positivos": "4/12",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 248,
+    "acierto_%": 52.0,
+    "media_neta_%": 0.801,
+    "ganancia_%": 34.05,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 188,
+    "acierto_%": 41.5,
+    "media_neta_%": -0.486,
+    "ganancia_%": -17.03,
+    "meses_positivos": "3/11",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 901,
+    "acierto_%": 50.3,
+    "media_neta_%": 0.619,
+    "ganancia_%": 109.3,
+    "meses_positivos": "25/47",
+    "meses_negativos": 22,
+    "meses_sin_operar": 0
+   }
+  ],
+  "1": [
+   {
+    "año": 2023,
+    "operaciones": 1431,
+    "acierto_%": 48.5,
+    "media_neta_%": 0.259,
+    "ganancia_%": 30.49,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 1443,
+    "acierto_%": 48.4,
+    "media_neta_%": 0.222,
+    "ganancia_%": 27.25,
+    "meses_positivos": "6/12",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 1448,
+    "acierto_%": 49.2,
+    "media_neta_%": -0.156,
+    "ganancia_%": -17.76,
+    "meses_positivos": "5/12",
+    "meses_negativos": 7,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 1221,
+    "acierto_%": 48.2,
+    "media_neta_%": -0.29,
+    "ganancia_%": -26.15,
+    "meses_positivos": "1/11",
+    "meses_negativos": 10,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 5543,
+    "acierto_%": 48.6,
+    "media_neta_%": 0.02,
+    "ganancia_%": 0.84,
+    "meses_positivos": "19/47",
+    "meses_negativos": 28,
+    "meses_sin_operar": 0
+   }
+  ],
+  "1b": [
+   {
+    "año": 2023,
+    "operaciones": 705,
+    "acierto_%": 47.5,
+    "media_neta_%": 0.249,
+    "ganancia_%": 23.6,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 720,
+    "acierto_%": 48.9,
+    "media_neta_%": 0.285,
+    "ganancia_%": 35.84,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 724,
+    "acierto_%": 48.8,
+    "media_neta_%": -0.329,
+    "ganancia_%": -34.34,
+    "meses_positivos": "4/12",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 609,
+    "acierto_%": 48.6,
+    "media_neta_%": -0.244,
+    "ganancia_%": -22.74,
+    "meses_positivos": "3/11",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 2758,
+    "acierto_%": 48.4,
+    "media_neta_%": -0.002,
+    "ganancia_%": -14.82,
+    "meses_positivos": "21/47",
+    "meses_negativos": 26,
+    "meses_sin_operar": 0
+   }
+  ],
+  "K1": [
+   {
+    "año": 2023,
+    "operaciones": 169,
+    "acierto_%": 58.6,
+    "media_neta_%": 2.297,
+    "ganancia_%": 82.04,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 151,
+    "acierto_%": 57.6,
+    "media_neta_%": 3.318,
+    "ganancia_%": 107.23,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2025,
+    "operaciones": 115,
+    "acierto_%": 60.9,
+    "media_neta_%": 0.923,
+    "ganancia_%": 18.69,
+    "meses_positivos": "9/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2026,
+    "operaciones": 80,
+    "acierto_%": 38.8,
+    "media_neta_%": 0.279,
+    "ganancia_%": 2.62,
+    "meses_positivos": "5/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 515,
+    "acierto_%": 55.7,
+    "media_neta_%": 1.976,
+    "ganancia_%": 359.49,
+    "meses_positivos": "30/47",
+    "meses_negativos": 15,
+    "meses_sin_operar": 2
+   }
+  ],
+  "K2": [
+   {
+    "año": 2023,
+    "operaciones": 174,
+    "acierto_%": 58.6,
+    "media_neta_%": 2.353,
+    "ganancia_%": 87.73,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 165,
+    "acierto_%": 59.4,
+    "media_neta_%": 3.422,
+    "ganancia_%": 129.56,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 134,
+    "acierto_%": 59.0,
+    "media_neta_%": 0.807,
+    "ganancia_%": 19.08,
+    "meses_positivos": "10/12",
+    "meses_negativos": 2,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 81,
+    "acierto_%": 39.5,
+    "media_neta_%": -0.021,
+    "ganancia_%": -1.72,
+    "meses_positivos": "4/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": "Total",
+    "operaciones": 554,
+    "acierto_%": 56.1,
+    "media_neta_%": 1.95,
+    "ganancia_%": 404.35,
+    "meses_positivos": "31/47",
+    "meses_negativos": 15,
+    "meses_sin_operar": 1
+   }
+  ],
+  "K3": [
+   {
+    "año": 2023,
+    "operaciones": 205,
+    "acierto_%": 58.5,
+    "media_neta_%": 2.09,
+    "ganancia_%": 94.18,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 161,
+    "acierto_%": 57.8,
+    "media_neta_%": 2.953,
+    "ganancia_%": 101.68,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2025,
+    "operaciones": 112,
+    "acierto_%": 58.0,
+    "media_neta_%": 0.688,
+    "ganancia_%": 12.82,
+    "meses_positivos": "8/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 1
+   },
+   {
+    "año": 2026,
+    "operaciones": 68,
+    "acierto_%": 44.1,
+    "media_neta_%": 0.736,
+    "ganancia_%": 7.47,
+    "meses_positivos": "4/11",
+    "meses_negativos": 4,
+    "meses_sin_operar": 3
+   },
+   {
+    "año": "Total",
+    "operaciones": 546,
+    "acierto_%": 56.4,
+    "media_neta_%": 1.888,
+    "ganancia_%": 374.85,
+    "meses_positivos": "29/47",
+    "meses_negativos": 13,
+    "meses_sin_operar": 5
+   }
+  ],
+  "K4": [
+   {
+    "año": 2023,
+    "operaciones": 177,
+    "acierto_%": 57.6,
+    "media_neta_%": 2.129,
+    "ganancia_%": 78.92,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 191,
+    "acierto_%": 52.4,
+    "media_neta_%": 1.793,
+    "ganancia_%": 57.83,
+    "meses_positivos": "6/12",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 174,
+    "acierto_%": 54.0,
+    "media_neta_%": 0.355,
+    "ganancia_%": 10.18,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 150,
+    "acierto_%": 41.3,
+    "media_neta_%": 0.127,
+    "ganancia_%": 1.87,
+    "meses_positivos": "4/11",
+    "meses_negativos": 7,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 692,
+    "acierto_%": 51.7,
+    "media_neta_%": 1.156,
+    "ganancia_%": 216.97,
+    "meses_positivos": "27/47",
+    "meses_negativos": 20,
+    "meses_sin_operar": 0
+   }
+  ],
+  "K5": [
+   {
+    "año": 2023,
+    "operaciones": 174,
+    "acierto_%": 58.0,
+    "media_neta_%": 2.238,
+    "ganancia_%": 82.43,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 184,
+    "acierto_%": 53.3,
+    "media_neta_%": 2.229,
+    "ganancia_%": 76.57,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 131,
+    "acierto_%": 51.9,
+    "media_neta_%": 0.058,
+    "ganancia_%": 0.49,
+    "meses_positivos": "8/12",
+    "meses_negativos": 4,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 111,
+    "acierto_%": 45.9,
+    "media_neta_%": 0.639,
+    "ganancia_%": 11.25,
+    "meses_positivos": "5/11",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 600,
+    "acierto_%": 53.0,
+    "media_neta_%": 1.464,
+    "ganancia_%": 260.08,
+    "meses_positivos": "28/47",
+    "meses_negativos": 19,
+    "meses_sin_operar": 0
+   }
+  ],
+  "K6": [
+   {
+    "año": 2023,
+    "operaciones": 159,
+    "acierto_%": 56.0,
+    "media_neta_%": 1.879,
+    "ganancia_%": 57.56,
+    "meses_positivos": "7/12",
+    "meses_negativos": 5,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 191,
+    "acierto_%": 52.4,
+    "media_neta_%": 1.793,
+    "ganancia_%": 57.83,
+    "meses_positivos": "6/12",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 175,
+    "acierto_%": 54.3,
+    "media_neta_%": 0.412,
+    "ganancia_%": 12.12,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 125,
+    "acierto_%": 33.6,
+    "media_neta_%": -0.418,
+    "ganancia_%": -9.24,
+    "meses_positivos": "3/11",
+    "meses_negativos": 8,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 650,
+    "acierto_%": 50.2,
+    "media_neta_%": 1.017,
+    "ganancia_%": 153.04,
+    "meses_positivos": "25/47",
+    "meses_negativos": 22,
+    "meses_sin_operar": 0
+   }
+  ],
+  "K7": [
+   {
+    "año": 2023,
+    "operaciones": 213,
+    "acierto_%": 57.7,
+    "media_neta_%": 1.95,
+    "ganancia_%": 90.29,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2024,
+    "operaciones": 200,
+    "acierto_%": 53.0,
+    "media_neta_%": 1.623,
+    "ganancia_%": 55.37,
+    "meses_positivos": "6/12",
+    "meses_negativos": 6,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2025,
+    "operaciones": 170,
+    "acierto_%": 52.9,
+    "media_neta_%": 0.281,
+    "ganancia_%": 7.28,
+    "meses_positivos": "9/12",
+    "meses_negativos": 3,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": 2026,
+    "operaciones": 155,
+    "acierto_%": 43.9,
+    "media_neta_%": 0.189,
+    "ganancia_%": 3.37,
+    "meses_positivos": "4/11",
+    "meses_negativos": 7,
+    "meses_sin_operar": 0
+   },
+   {
+    "año": "Total",
+    "operaciones": 738,
+    "acierto_%": 52.4,
+    "media_neta_%": 1.107,
+    "ganancia_%": 227.89,
+    "meses_positivos": "28/47",
+    "meses_negativos": 19,
+    "meses_sin_operar": 0
+   }
+  ]
+ },
+ "resumen": [
+  {
+   "variante": "G",
+   "2023": 80.3,
+   "2024": 112.3,
+   "2025": 17.6,
+   "2026": 6.6,
+   "total_%": 379.5,
+   "meses_pos": "27/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -14.4
+  },
+  {
+   "variante": "10",
+   "2023": 71.9,
+   "2024": 112.3,
+   "2025": 12.8,
+   "2026": 6.6,
+   "total_%": 338.7,
+   "meses_pos": "24/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -14.4
+  },
+  {
+   "variante": "10b",
+   "2023": 70.0,
+   "2024": 112.3,
+   "2025": 17.6,
+   "2026": 6.6,
+   "total_%": 352.0,
+   "meses_pos": "25/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -14.4
+  },
+  {
+   "variante": "9",
+   "2023": 72.7,
+   "2024": 103.8,
+   "2025": 17.6,
+   "2026": 6.6,
+   "total_%": 340.9,
+   "meses_pos": "27/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -9.7,
+   "caida_max_%": -13.0
+  },
+  {
+   "variante": "8",
+   "2023": 86.0,
+   "2024": 105.0,
+   "2025": 17.6,
+   "2026": 0.8,
+   "total_%": 351.9,
+   "meses_pos": "28/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -17.4
+  },
+  {
+   "variante": "8b",
+   "2023": 85.6,
+   "2024": 151.1,
+   "2025": 17.6,
+   "2026": -8.2,
+   "total_%": 403.0,
+   "meses_pos": "29/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -11.3,
+   "caida_max_%": -19.9
+  },
+  {
+   "variante": "7a",
+   "2023": 73.3,
+   "2024": 88.0,
+   "2025": 20.6,
+   "2026": 3.8,
+   "total_%": 307.8,
+   "meses_pos": "23/47",
+   "meses_pos_2026": "2/11",
+   "peor_mes_%": -6.1,
+   "caida_max_%": -24.9
+  },
+  {
+   "variante": "7b",
+   "2023": 81.9,
+   "2024": 108.7,
+   "2025": 19.4,
+   "2026": 6.3,
+   "total_%": 381.8,
+   "meses_pos": "27/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -9.7,
+   "caida_max_%": -13.2
+  },
+  {
+   "variante": "7",
+   "2023": 79.6,
+   "2024": 86.2,
+   "2025": 21.7,
+   "2026": 1.6,
+   "total_%": 313.5,
+   "meses_pos": "23/47",
+   "meses_pos_2026": "2/11",
+   "peor_mes_%": -6.0,
+   "caida_max_%": -22.9
+  },
+  {
+   "variante": "7c",
+   "2023": 42.2,
+   "2024": 82.0,
+   "2025": 8.2,
+   "2026": -0.7,
+   "total_%": 178.3,
+   "meses_pos": "20/47",
+   "meses_pos_2026": "1/11",
+   "peor_mes_%": -5.2,
+   "caida_max_%": -16.3
+  },
+  {
+   "variante": "6b",
+   "2023": 3.2,
+   "2024": 10.8,
+   "2025": 2.1,
+   "2026": -9.9,
+   "total_%": 5.2,
+   "meses_pos": "8/47",
+   "meses_pos_2026": "1/11",
+   "peor_mes_%": -12.5,
+   "caida_max_%": -12.7
+  },
+  {
+   "variante": "6",
+   "2023": 85.4,
+   "2024": 118.0,
+   "2025": 20.0,
+   "2026": -1.1,
+   "total_%": 379.5,
+   "meses_pos": "30/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -13.3
+  },
+  {
+   "variante": "5",
+   "2023": 47.6,
+   "2024": 125.7,
+   "2025": -0.9,
+   "2026": 1.0,
+   "total_%": 233.5,
+   "meses_pos": "16/47",
+   "meses_pos_2026": "1/11",
+   "peor_mes_%": -6.5,
+   "caida_max_%": -11.9
+  },
+  {
+   "variante": "5b",
+   "2023": 63.4,
+   "2024": 120.0,
+   "2025": 8.0,
+   "2026": 3.8,
+   "total_%": 303.3,
+   "meses_pos": "24/47",
+   "meses_pos_2026": "1/11",
+   "peor_mes_%": -8.1,
+   "caida_max_%": -13.0
+  },
+  {
+   "variante": "4",
+   "2023": 82.6,
+   "2024": 107.2,
+   "2025": 16.7,
+   "2026": 5.9,
+   "total_%": 367.7,
+   "meses_pos": "28/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -6.1,
+   "caida_max_%": -6.1
+  },
+  {
+   "variante": "3",
+   "2023": 72.0,
+   "2024": 100.5,
+   "2025": 13.0,
+   "2026": 3.1,
+   "total_%": 301.6,
+   "meses_pos": "27/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -9.0,
+   "caida_max_%": -16.1
+  },
+  {
+   "variante": "2b",
+   "2023": -0.0,
+   "2024": -10.6,
+   "2025": 6.3,
+   "2026": -3.0,
+   "total_%": -7.9,
+   "meses_pos": "6/47",
+   "meses_pos_2026": "2/11",
+   "peor_mes_%": -4.6,
+   "caida_max_%": -16.9
+  },
+  {
+   "variante": "2",
+   "2023": 80.4,
+   "2024": 107.6,
+   "2025": 25.0,
+   "2026": 3.4,
+   "total_%": 383.8,
+   "meses_pos": "28/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -10.3,
+   "caida_max_%": -16.3
+  },
+  {
+   "variante": "2c",
+   "2023": 92.4,
+   "2024": -2.2,
+   "2025": 34.1,
+   "2026": -17.0,
+   "total_%": 109.3,
+   "meses_pos": "25/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -13.7,
+   "caida_max_%": -26.9
+  },
+  {
+   "variante": "1",
+   "2023": 30.5,
+   "2024": 27.3,
+   "2025": -17.8,
+   "2026": -26.2,
+   "total_%": 0.8,
+   "meses_pos": "19/47",
+   "meses_pos_2026": "1/11",
+   "peor_mes_%": -12.8,
+   "caida_max_%": -39.3
+  },
+  {
+   "variante": "1b",
+   "2023": 23.6,
+   "2024": 35.8,
+   "2025": -34.3,
+   "2026": -22.7,
+   "total_%": -14.8,
+   "meses_pos": "21/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -19.3,
+   "caida_max_%": -49.8
+  },
+  {
+   "variante": "K1",
+   "2023": 82.0,
+   "2024": 107.2,
+   "2025": 18.7,
+   "2026": 2.6,
+   "total_%": 359.5,
+   "meses_pos": "30/47",
+   "meses_pos_2026": "5/11",
+   "peor_mes_%": -7.1,
+   "caida_max_%": -10.7
+  },
+  {
+   "variante": "K2",
+   "2023": 87.7,
+   "2024": 129.6,
+   "2025": 19.1,
+   "2026": -1.7,
+   "total_%": 404.4,
+   "meses_pos": "31/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -9.9,
+   "caida_max_%": -13.8
+  },
+  {
+   "variante": "K3",
+   "2023": 94.2,
+   "2024": 101.7,
+   "2025": 12.8,
+   "2026": 7.5,
+   "total_%": 374.8,
+   "meses_pos": "29/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -5.5,
+   "caida_max_%": -8.9
+  },
+  {
+   "variante": "K4",
+   "2023": 78.9,
+   "2024": 57.8,
+   "2025": 10.2,
+   "2026": 1.9,
+   "total_%": 217.0,
+   "meses_pos": "27/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -10.7,
+   "caida_max_%": -22.9
+  },
+  {
+   "variante": "K5",
+   "2023": 82.4,
+   "2024": 76.6,
+   "2025": 0.5,
+   "2026": 11.2,
+   "total_%": 260.1,
+   "meses_pos": "28/47",
+   "meses_pos_2026": "5/11",
+   "peor_mes_%": -11.4,
+   "caida_max_%": -19.0
+  },
+  {
+   "variante": "K6",
+   "2023": 57.6,
+   "2024": 57.8,
+   "2025": 12.1,
+   "2026": -9.2,
+   "total_%": 153.0,
+   "meses_pos": "25/47",
+   "meses_pos_2026": "3/11",
+   "peor_mes_%": -10.7,
+   "caida_max_%": -22.9
+  },
+  {
+   "variante": "K7",
+   "2023": 90.3,
+   "2024": 55.4,
+   "2025": 7.3,
+   "2026": 3.4,
+   "total_%": 227.9,
+   "meses_pos": "28/47",
+   "meses_pos_2026": "4/11",
+   "peor_mes_%": -10.7,
+   "caida_max_%": -21.5
+  }
+ ],
+ "meses_2026": {
+  "G": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 3.0
+  },
+  "10": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 3.0
+  },
+  "10b": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 3.0
+  },
+  "9": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 3.0
+  },
+  "8": {
+   "ene": -0.79,
+   "feb": -7.08,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 0.53,
+   "jul": 0.43,
+   "ago": 15.06,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 4.0
+  },
+  "8b": {
+   "ene": 3.24,
+   "feb": -8.23,
+   "mar": -0.36,
+   "abr": 0.33,
+   "may": -1.6,
+   "jun": -11.27,
+   "jul": 0.73,
+   "ago": 15.56,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 4.0
+  },
+  "7a": {
+   "ene": -0.76,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.0,
+   "may": -1.81,
+   "jun": 0.0,
+   "jul": -0.74,
+   "ago": 14.72,
+   "sep": -1.12,
+   "oct": -2.07,
+   "nov": -3.39,
+   "positivos": 1.0
+  },
+  "7b": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.45,
+   "may": -2.62,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 13.9,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -1.73,
+   "positivos": 3.0
+  },
+  "7": {
+   "ene": -0.76,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.12,
+   "may": -2.84,
+   "jun": 0.0,
+   "jul": -0.74,
+   "ago": 11.74,
+   "sep": -1.12,
+   "oct": -2.07,
+   "nov": -2.0,
+   "positivos": 2.0
+  },
+  "7c": {
+   "ene": -0.58,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": -1.49,
+   "may": -1.62,
+   "jun": 0.0,
+   "jul": -0.51,
+   "ago": 9.55,
+   "sep": -2.29,
+   "oct": -1.53,
+   "nov": -1.68,
+   "positivos": 1.0
+  },
+  "6b": {
+   "ene": -0.15,
+   "feb": -12.53,
+   "mar": 0.0,
+   "abr": 0.0,
+   "may": 0.0,
+   "jun": 3.13,
+   "jul": 0.0,
+   "ago": 0.0,
+   "sep": 0.0,
+   "oct": 0.0,
+   "nov": 0.0,
+   "positivos": 1.0
+  },
+  "6": {
+   "ene": -1.9,
+   "feb": -9.9,
+   "mar": 0.0,
+   "abr": 0.33,
+   "may": -1.59,
+   "jun": 3.13,
+   "jul": 0.43,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 4.0
+  },
+  "5": {
+   "ene": 0.0,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": -3.44,
+   "may": -0.49,
+   "jun": 0.0,
+   "jul": -0.7,
+   "ago": 15.22,
+   "sep": -4.37,
+   "oct": -3.89,
+   "nov": 0.0,
+   "positivos": 1.0
+  },
+  "5b": {
+   "ene": -0.87,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": -1.55,
+   "may": -1.04,
+   "jun": 0.0,
+   "jul": -0.14,
+   "ago": 14.97,
+   "sep": -2.46,
+   "oct": -2.46,
+   "nov": -1.56,
+   "positivos": 1.0
+  },
+  "4": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": -1.18,
+   "may": -1.35,
+   "jun": 0.0,
+   "jul": -0.1,
+   "ago": 13.15,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 3.0
+  },
+  "3": {
+   "ene": 0.29,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": -1.25,
+   "may": -2.16,
+   "jun": 0.0,
+   "jul": 0.43,
+   "ago": 13.82,
+   "sep": -1.71,
+   "oct": -1.59,
+   "nov": -3.75,
+   "positivos": 3.0
+  },
+  "2b": {
+   "ene": -0.57,
+   "feb": 4.62,
+   "mar": 0.26,
+   "abr": -1.48,
+   "may": 0.0,
+   "jun": -4.4,
+   "jul": -1.24,
+   "ago": 0.0,
+   "sep": 0.0,
+   "oct": 0.0,
+   "nov": 0.0,
+   "positivos": 2.0
+  },
+  "2": {
+   "ene": -2.32,
+   "feb": 4.62,
+   "mar": 0.26,
+   "abr": -1.15,
+   "may": -1.59,
+   "jun": -4.4,
+   "jul": -0.81,
+   "ago": 14.72,
+   "sep": -0.56,
+   "oct": -1.03,
+   "nov": -3.12,
+   "positivos": 3.0
+  },
+  "2c": {
+   "ene": 9.89,
+   "feb": -9.55,
+   "mar": 0.08,
+   "abr": -3.3,
+   "may": -2.33,
+   "jun": -13.7,
+   "jul": -1.01,
+   "ago": 15.94,
+   "sep": -5.17,
+   "oct": -2.77,
+   "nov": -3.31,
+   "positivos": 3.0
+  },
+  "1": {
+   "ene": -6.63,
+   "feb": -6.97,
+   "mar": -4.8,
+   "abr": -0.2,
+   "may": -1.68,
+   "jun": -0.79,
+   "jul": 1.36,
+   "ago": -3.71,
+   "sep": -2.88,
+   "oct": -2.67,
+   "nov": -0.55,
+   "positivos": 1.0
+  },
+  "1b": {
+   "ene": -1.45,
+   "feb": -7.58,
+   "mar": -5.77,
+   "abr": 1.67,
+   "may": -3.32,
+   "jun": -0.49,
+   "jul": 4.5,
+   "ago": -2.91,
+   "sep": -7.4,
+   "oct": -3.11,
+   "nov": 1.13,
+   "positivos": 3.0
+  },
+  "K1": {
+   "ene": -0.79,
+   "feb": -7.08,
+   "mar": 0.61,
+   "abr": -1.18,
+   "may": -1.35,
+   "jun": -0.99,
+   "jul": 4.33,
+   "ago": 12.3,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 5.0
+  },
+  "K2": {
+   "ene": -1.9,
+   "feb": -9.9,
+   "mar": 0.0,
+   "abr": -1.18,
+   "may": -1.35,
+   "jun": 3.13,
+   "jul": -0.1,
+   "ago": 13.15,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 4.0
+  },
+  "K3": {
+   "ene": -1.75,
+   "feb": 0.0,
+   "mar": 0.0,
+   "abr": 0.07,
+   "may": -2.86,
+   "jun": 0.0,
+   "jul": -0.1,
+   "ago": 14.94,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.53,
+   "positivos": 4.0
+  },
+  "K4": {
+   "ene": -2.32,
+   "feb": 7.97,
+   "mar": -4.05,
+   "abr": -1.69,
+   "may": -1.35,
+   "jun": -3.7,
+   "jul": -2.21,
+   "ago": 12.65,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 4.0
+  },
+  "K5": {
+   "ene": -1.71,
+   "feb": 4.71,
+   "mar": 4.41,
+   "abr": -1.18,
+   "may": -1.35,
+   "jun": -3.98,
+   "jul": -0.1,
+   "ago": 13.15,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 5.0
+  },
+  "K6": {
+   "ene": -1.36,
+   "feb": -3.23,
+   "mar": -4.05,
+   "abr": -1.69,
+   "may": -1.35,
+   "jun": -4.48,
+   "jul": -2.21,
+   "ago": 11.8,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.35,
+   "positivos": 3.0
+  },
+  "K7": {
+   "ene": -2.32,
+   "feb": 7.97,
+   "mar": -4.05,
+   "abr": -0.43,
+   "may": -2.86,
+   "jun": -3.7,
+   "jul": -2.21,
+   "ago": 14.44,
+   "sep": 0.71,
+   "oct": -3.2,
+   "nov": 0.53,
+   "positivos": 4.0
+  }
+ }
+}
