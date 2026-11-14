@@ -566,3 +566,210 @@ régimen fuerte que el modelo dio por buenas, y los filtros que las quitan tambi
 **Decisión:** se acepta la 7e como versión final, con 2025 0,69 puntos más bajo. Total +490,8 %, caída máxima
 −3,48 %, 33 meses positivos de 47 y 7 de 11 en 2026.
 
+
+## Subir octubre y noviembre de 2026 sin empeorar nada
+
+Código: `meses9.py`. Punto de partida: la versión final (7e de `meses8.py`). Condiciones, todas frente a ella: 2023,
+2024, 2025 y 2026 no ganan menos (K1 a K4); la caída máxima no sube (K5); los meses positivos de 47 no bajan de 33
+(K6); los de 2026 no bajan de 7 (K7); ningún mes de 2026 que hoy es positivo pasa a negativo (K8); ni octubre ni
+noviembre empeoran (K9). Meta: subir octubre (hoy −2,54 %) y noviembre (hoy +2,37 %, hasta el día 13); lo ideal es
+octubre positivo.
+
+Las pérdidas de octubre son cinco compras en régimen fuerte, con BTC entre 13 % y 21 % sobre su media de 200 días:
+
+| Compra | Moneda | Resultado | Mejor momento | Peor momento |
+|---|---|---|---|---|
+| 2 oct 15:00 | SOL | −1,14 % | +1,36 % | −2,93 % |
+| 5 oct 00:00 | BNB | −3,08 % | +1,83 % | −4,63 % |
+| 5 oct 00:00 | ETH | −5,79 % | +0,41 % | −6,93 % |
+| 7 oct 02:00 | XRP | −4,75 % | +0,12 % | −10,65 % |
+| 13 oct 14:00 | XRP | −2,26 % | +1,77 % | −5,78 % |
+
+Ninguna llegó a ir ganando de forma apreciable, así que las salidas (objetivo, punto de equilibrio, cortes) no las
+arreglan: solo sirve no comprarlas. La pérdida de noviembre es una compra de BTC del día 10 (−2,59 %), hecha con BTC
+a 3 % de su media de 200 días y cayendo.
+
+### Diez sugerencias, de menor a mayor complejidad
+
+| # | Sugerencia | Qué cambia |
+|---|---|---|
+| 1 | Margen en el modelo de 24 h | Debe predecir una subida mayor que un mínimo, no solo mayor que cero |
+| 2 | Margen sobre el percentil | La predicción de 72 h debe superar el umbral por un porcentaje |
+| 3 | Freno por caída de BTC | Sin compras dentro de régimen si BTC cayó más de x % en 24 h |
+| 4 | Filtro de volatilidad | Sin compras si el ATR de la moneda está lejos de su mediana de 30 días |
+| 5 | Persistencia de la señal | La señal debe llevar 2 o 3 horas seguidas activa |
+| 6 | Corte por tiempo | A las 24 o 48 h, vender si la compra pierde más de 4 o 6 ATR |
+| 7 | Salida por señal | Vender una compra que va perdiendo si el modelo pasa a predecir caída |
+| 8 | No sumar a pérdidas | Sin compras nuevas si las posiciones abiertas pierden en promedio más de x % |
+| 9 | Reentreno quincenal | Modelos nuevos el día 1 y el día 16 |
+| 10 | Segundo modelo | Un clasificador predice si la operación termina ganando con las salidas reales |
+
+Resultados por separado. Las variantes 2d, 2e, 3d, 3e y 3f son una segunda ronda (versiones más finas de la 2 y la
+3) y la 11 salió de una tercera ronda de búsqueda de reglas, descrita más abajo. En negrita, las que no rompen nada:
+
+| Variante | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Meses + 2026 | Sep | Oct | Nov | Falla |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Punto de partida (versión final) | +77,48 | +127,43 | +19,84 | +22,14 | +490,8 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 |  |
+| 1a. El modelo de 24 h predice más de +0,02 % | +76,64 | +119,82 | +19,84 | +22,11 | +468,2 | −3,48 | 33 | 7 | +0,42 | −2,53 | +2,37 | K1 K2 K4 |
+| 1b. El modelo de 24 h predice más de +0,05 % | +77,37 | +121,11 | +19,96 | +21,24 | +470,4 | −3,48 | 32 | 6 | −0,58 | −2,53 | +2,37 | K1 K2 K4 K6 K7 K8 |
+| 1c. El modelo de 24 h predice más de +0,10 % | +80,98 | +106,58 | +15,89 | +20,42 | +421,7 | −3,61 | 32 | 6 | −0,58 | −3,05 | +2,25 | K2 K3 K4 K5 K6 K7 K8 K9 |
+| 2a. Predicción 3 % sobre el umbral | +78,38 | +138,93 | +18,46 | +21,61 | +514,0 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,37 | K3 K4 |
+| 2b. Predicción 5 % sobre el umbral | +80,26 | +141,53 | +20,49 | +21,77 | +538,8 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,50 | K4 |
+| 2c. Predicción 10 % sobre el umbral | +78,99 | +123,19 | +25,64 | +19,04 | +497,5 | −3,91 | 30 | 6 | +0,82 | −3,05 | +2,38 | K2 K4 K5 K6 K7 K9 |
+| **2d. Predicción 5 % sobre el umbral, solo en régimen fuerte** | +79,17 | +141,53 | +20,49 | +22,79 | +540,2 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,50 | ninguna |
+| **2e. Predicción 6 % sobre el umbral, solo en régimen fuerte** | +81,93 | +139,10 | +20,32 | +22,79 | +542,6 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,50 | ninguna |
+| 3a. Sin compras en régimen si BTC cayó más de 2 % en 24 h | +57,57 | +121,96 | −2,99 | +22,16 | +314,5 | −8,93 | 27 | 6 | +0,42 | −2,54 | +2,68 | K1 K2 K3 K5 K6 K7 |
+| 3b. Sin compras en régimen si BTC cayó más de 3 % en 24 h | +58,94 | +126,82 | +8,62 | +22,05 | +378,0 | −8,93 | 28 | 6 | +0,42 | −2,54 | +2,59 | K1 K2 K3 K4 K5 K6 K7 |
+| 3c. Sin compras en régimen si BTC cayó más de 4 % en 24 h | +68,81 | +126,28 | +2,34 | +21,80 | +376,1 | −13,12 | 29 | 6 | +0,42 | −2,54 | +2,37 | K1 K2 K3 K4 K5 K6 K7 |
+| 3d. Régimen fuerte: sin compras si BTC está a menos de 3 % de su media de 200 días y cayó en 24 h | +77,12 | +128,39 | +20,17 | +22,65 | +496,3 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,80 | K1 |
+| **3e. Régimen fuerte: sin compras si BTC está a menos de 3 % de su media y cayó más de 2 % en 24 h** | +77,48 | +128,39 | +19,98 | +22,65 | +496,5 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,80 | ninguna |
+| **3f. Régimen fuerte: sin compras si BTC está a menos de 5 % de su media y cayó más de 2 % en 24 h** | +77,48 | +128,39 | +23,43 | +22,65 | +513,7 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,80 | ninguna |
+| 4a. Sin compras si el ATR está bajo 0,6 veces su mediana de 30 días | +84,24 | +122,63 | +19,43 | +20,82 | +491,9 | −4,95 | 32 | 6 | +0,82 | −3,33 | +2,25 | K2 K3 K4 K5 K6 K7 K8 K9 |
+| 4b. Sin compras si el ATR está bajo 0,75 veces su mediana de 30 días | +82,80 | +144,44 | +15,55 | +21,94 | +529,6 | −4,04 | 33 | 7 | +0,82 | −3,29 | +2,52 | K3 K4 K5 K9 |
+| 4c. Sin compras si el ATR está sobre 1,5 veces su mediana de 30 días | +46,16 | +65,74 | +7,23 | +0,31 | +160,6 | −5,19 | 23 | 4 | +1,24 | −2,54 | +2,68 | K1 K2 K3 K4 K5 K6 K7 K8 |
+| 5a. Señal activa 2 horas seguidas | +65,52 | +104,69 | +24,87 | +12,68 | +376,7 | −4,94 | 27 | 4 | −1,37 | −3,04 | +2,98 | K1 K2 K4 K5 K6 K7 K8 K9 |
+| 5b. Señal activa 3 horas seguidas | +31,83 | +97,32 | +24,42 | +13,08 | +266,0 | −4,98 | 24 | 4 | −1,84 | −3,20 | +2,90 | K1 K2 K4 K5 K6 K7 K8 K9 |
+| 6a. A las 24 h, vender si pierde más de 4 ATR | +78,03 | +134,98 | +21,60 | +19,21 | +506,4 | −3,48 | 34 | 7 | +0,42 | −2,38 | +0,46 | K4 K9 |
+| 6b. A las 24 h, vender si pierde más de 6 ATR | +78,30 | +133,90 | +23,99 | +21,20 | +526,7 | −3,48 | 33 | 7 | +0,42 | −2,54 | +1,58 | K4 K9 |
+| 6c. A las 48 h, vender si pierde más de 4 ATR | +71,23 | +115,20 | +16,04 | +19,99 | +413,1 | −5,54 | 32 | 7 | +0,43 | −3,16 | +1,74 | K1 K2 K3 K4 K5 K6 K9 |
+| 6d. A las 48 h, vender si pierde más de 6 ATR | +73,29 | +118,26 | +19,43 | +21,97 | +450,9 | −4,14 | 32 | 7 | +0,50 | −2,75 | +2,37 | K1 K2 K3 K4 K5 K6 K9 |
+| 7a. Vender si va perdiendo y la predicción cae al 10 % más bajo | +67,76 | +132,44 | +23,59 | +21,14 | +483,8 | −3,54 | 33 | 7 | +0,42 | −3,24 | +2,25 | K1 K4 K5 K9 |
+| 7b. Vender si va perdiendo y la predicción cae al 5 % más bajo | +70,96 | +128,24 | +25,08 | +22,14 | +496,1 | −3,40 | 33 | 7 | +0,42 | −2,54 | +2,37 | K1 |
+| 7c. Vender si va perdiendo y los modelos de 72 h y 24 h predicen caída | +52,42 | +127,72 | +20,66 | +13,96 | +377,3 | −5,14 | 28 | 4 | −0,83 | −2,45 | −1,94 | K1 K4 K5 K6 K7 K8 K9 |
+| 8a. Sin compras nuevas si las abiertas pierden más de 1 % en promedio | +65,21 | +131,30 | +10,90 | +20,05 | +408,8 | −3,63 | 30 | 5 | −0,47 | −1,75 | +2,37 | K1 K3 K4 K5 K6 K7 K8 |
+| 8b. Sin compras nuevas si las abiertas pierden más de 2 % en promedio | +64,52 | +113,30 | +7,97 | +20,05 | +354,8 | −8,84 | 29 | 5 | −0,47 | −1,75 | +2,37 | K1 K2 K3 K4 K5 K6 K7 K8 |
+| 8c. Sin compras nuevas si las abiertas pierden más de 3 % en promedio | +65,92 | +110,06 | +8,12 | +22,14 | +360,2 | −8,84 | 30 | 7 | +0,42 | −2,54 | +2,37 | K1 K2 K3 K5 K6 |
+| 9. Reentreno quincenal (días 1 y 16) | +80,21 | +92,16 | +18,36 | +11,03 | +355,1 | −9,86 | 30 | 7 | −2,35 | −2,71 | +1,16 | K2 K3 K4 K5 K6 K8 K9 |
+| 10a. Segundo modelo: probabilidad de ganar mayor que 50 % | +28,51 | +109,77 | +28,04 | +24,84 | +330,9 | −3,77 | 28 | 6 | +1,08 | −1,37 | +2,68 | K1 K2 K5 K6 K7 |
+| 10b. Segundo modelo: probabilidad de ganar mayor que 55 % | +31,15 | +111,24 | +32,20 | +23,29 | +351,6 | −3,67 | 30 | 6 | +0,79 | −1,48 | +1,52 | K1 K2 K5 K6 K7 K9 |
+| 10c. Segundo modelo: probabilidad de ganar sobre su percentil 90 | +23,86 | +87,70 | +31,84 | +20,74 | +270,1 | −3,78 | 29 | 5 | 0 | 0 | +1,10 | K1 K2 K4 K5 K6 K7 K9 |
+| 11a. Régimen fuerte: sin compras si la dispersión es menor que 2 % y BTC está más de 10 % sobre su media | +77,84 | +127,43 | +19,84 | +24,63 | +504,1 | −3,48 | 33 | 7 | +0,42 | −0,43 | +2,25 | K9 |
+| 11b. Régimen fuerte: sin compras si la dispersión es menor que 2,5 % y BTC está más de 10 % sobre su media | +78,73 | +127,43 | +20,48 | +25,53 | +514,8 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,25 | K9 |
+| 11c. Régimen fuerte: sin compras si la dispersión es menor que 3 % y BTC está más de 10 % sobre su media | +77,36 | +127,33 | +19,78 | +25,53 | +506,2 | −3,50 | 33 | 7 | +0,82 | −0,11 | +2,25 | K1 K2 K3 K5 K9 |
+| **11d. Régimen fuerte: sin compras si la dispersión es menor que 2,5 % y BTC está más de 12,5 % sobre su media** | +78,73 | +127,43 | +20,48 | +25,19 | +513,1 | −3,48 | 33 | 7 | +0,42 | −0,11 | +2,37 | ninguna |
+
+### Combinaciones
+
+Se probaron 215.808 combinaciones: todas las de las diez sugerencias sin la 5 ni la 9 (que empeoran casi todo), con
+las variantes de la segunda ronda, y las de la 11 con las que quedaron más cerca.
+
+| Resultado | Combinaciones |
+|---|---|
+| No empeoran nada (K1 a K9) | 99 |
+| Además suben octubre y noviembre | 95 |
+| Dejan octubre en positivo | 0 |
+
+Las 99 que no empeoran nada usan solo las reglas 1a, 2b, 2d, 2e, 3d, 3e, 3f y 11. Las que más suben:
+
+| Combinación | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Meses + 2026 | Sep | Oct | Nov |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Versión final | +77,48 | +127,43 | +19,84 | +22,14 | +490,8 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 |
+| 2d+3f+11d | +81,24 | +142,56 | +22,92 | +26,38 | +582,9 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,93 |
+| 2e+3f+11d | +82,26 | +140,12 | +23,32 | +26,38 | +582,0 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,93 |
+| 2d+3e+11d | +81,24 | +142,56 | +21,35 | +26,38 | +574,2 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,93 |
+| 2d+3f+11b | +81,24 | +142,56 | +22,92 | +26,23 | +582,1 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,81 |
+| **2d+3e+11b** | +81,24 | +142,56 | +21,35 | +26,23 | +573,4 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,81 |
+| 2d+3e+11c | +79,72 | +142,44 | +20,64 | +26,23 | +563,5 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,81 |
+| 3e+11b | +78,73 | +128,39 | +20,62 | +26,06 | +520,7 | −3,48 | 33 | 7 | +0,82 | −0,11 | +2,68 |
+| 2d+3e | +79,17 | +142,56 | +20,69 | +23,30 | +546,7 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,93 |
+| 2e+3f | +81,93 | +140,12 | +22,65 | +23,30 | +560,6 | −3,48 | 33 | 7 | +0,82 | −2,53 | +2,93 |
+| 3e | +77,48 | +128,39 | +19,98 | +22,65 | +496,5 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,80 |
+| 11d | +78,73 | +127,43 | +20,48 | +25,19 | +513,1 | −3,48 | 33 | 7 | +0,42 | −0,11 | +2,37 |
+
+Sin la 11, octubre no se mueve (de −2,54 % a −2,53 %): las 22 combinaciones de las diez sugerencias que cumplen
+todo solo suben noviembre y septiembre.
+
+### Lo que cumple todo
+
+Tres reglas de entrada, todas para el régimen fuerte, cumplen las condiciones y se suman entre sí:
+
+| Regla | Qué hace | Operaciones que cambia (2023 a 2026) |
+|---|---|---|
+| **2d. Margen de 5 %** | La predicción debe superar el percentil 90 por un 5 % | Quita 61 y añade 45 (muchas solo se retrasan una hora) |
+| **3e. Freno cerca de la media** | Sin compras si BTC está a menos de 3 % sobre su media de 200 días y cayó más de 2 % en 24 h | Quita 6: cinco perdedoras y una ganadora |
+| **11b. Monedas moviéndose igual** | Sin compras si la desviación estándar de las subidas de 7 días de las seis monedas es menor que 2,5 % y BTC está más de 10 % sobre su media de 200 días | Quita 11 y añade 4 |
+
+| Medida | Versión final | 2d+3e | 3e+11b | **2d+3e+11b** |
+|---|---|---|---|---|
+| 2023 | +77,48 % | +79,17 % | +78,73 % | **+81,24 %** |
+| 2024 | +127,43 % | +142,56 % | +128,39 % | **+142,56 %** |
+| 2025 | +19,84 % | +20,69 % | +20,62 % | **+21,35 %** |
+| 2026 | +22,14 % | +23,30 % | +26,06 % | **+26,23 %** |
+| Total | +490,8 % | +546,7 % | +520,7 % | **+573,4 %** |
+| Caída máxima | −3,48 % | −3,48 % | −3,48 % | **−3,48 %** |
+| Meses positivos de 47 | 33 | 33 | 33 | **33** |
+| Meses positivos de 2026 | 7 | 7 | 7 | **7** |
+| Septiembre de 2026 | +0,42 % | +0,82 % | +0,82 % | **+0,82 %** |
+| Octubre de 2026 | −2,54 % | −2,53 % | −0,11 % | **−0,11 %** |
+| Noviembre de 2026 | +2,37 % | +2,93 % | +2,68 % | **+2,81 %** |
+| 2022 (fuera de las tablas) | +1,54 % | +1,54 % | +1,54 % | +1,54 % |
+
+Operaciones que quita la 3e (con la 2d ya puesta). Las cinco perdedoras son las mismas que la salida de
+protección ya vendía con pérdida: la 3e es esa misma idea aplicada a la entrada.
+
+| Compra | Moneda | Resultado que tenía |
+|---|---|---|
+| 30 sep 2024 | DOGE | −2,67 % |
+| 13 mar 2025 | ETH | +4,36 % |
+| 28 mar 2025 | BNB | −1,12 % |
+| 28 mar 2025 | ETH | −0,37 % |
+| 3 nov 2025 | DOGE | −3,74 % |
+| 10 nov 2026 | BTC | −2,59 % |
+
+Operaciones que cambia la 11b (con la 2d y la 3e ya puestas):
+
+| Compra | Moneda | Antes | Después |
+|---|---|---|---|
+| 29 ene 2023 | XRP | −2,14 % | Entra el 30 ene: +3,63 % |
+| 30 ene 2023 | SOL | −1,91 % | Entra 8 h después: −0,95 % |
+| 1 may 2023 | XRP | −0,30 % | No se compra |
+| 8 may 2023 | XRP | −2,51 % | Entra 2 h después: −2,70 % |
+| 8 ene 2025 | SOL | −3,57 % | No se compra |
+| 28 sep 2026 | DOGE | +1,79 % | Entra el 29 sep: +1,62 % |
+| 2 oct 2026 | SOL | −1,14 % | No se compra |
+| 5 oct 2026 | BNB | −3,03 % | No se compra |
+| 5 oct 2026 | ETH | −5,82 % | No se compra |
+| 7 oct 2026 | XRP | −4,75 % | No se compra |
+| 29 oct 2026 | XRP | +0,74 % | No se compra |
+
+Octubre queda en −0,11 %: una compra de DOGE (+1,62 %) y la de XRP del 13 de octubre (−2,26 %), que ninguna regla
+quita sin romper otra condición.
+
+Sensibilidad (sobre 2d+3e; «sí» es que cumple K1 a K9):
+
+| Regla | Valores que cumplen | Valores que no cumplen |
+|---|---|---|
+| 2d, margen | 5 % y 6 % | 1 % a 4 % (2025 baja a +18,2 %), 7 % (octubre −2,63 %), 8 % o más |
+| 3e, distancia a la media y caída de BTC | 3 % con caída de 0 a 3 %; 5 % con caída de 2 o 3 % | 5 % con caída de 0 o 1 % (2025 baja), 8 % o más |
+| 11b, dispersión y distancia de BTC a su media | Dispersión de 1,5 % a 3,5 % con BTC de 10 % a 15 % sobre la media | Dispersión de 4 %, 5 % y 6 % (con 4,5 % sí cumple); BTC a 5 % sobre la media |
+
+### Lo que no funcionó
+
+- **Octubre positivo:** ninguna combinación de las diez lo logra. En la búsqueda de reglas, un solo par de 131.995
+  lo deja en +0,05 % sin romper nada (moneda menos de 8,5 % por encima de BTC en 30 días y más de 52,4 % de volumen
+  comprador en 24 h); es un punto aislado, sin vecinos que cumplan, y no se propone.
+- **Salidas (6 y 7) y no sumar a pérdidas (8):** bajan noviembre o los años anteriores. Las compras del 2 de
+  noviembre iban perdiendo cerca de 2 % a las 24 h y terminaron ganando.
+- **Reentreno quincenal (9):** peor en casi todo; 2024 baja de +127 % a +92 %.
+- **Segundo modelo (10):** es lo que más sube octubre entre las diez (−1,37 % con 10a; sin operaciones con 10c),
+  pero 2023 cae de +77 % a +24 %–+31 %.
+- **Más de 100 variantes sueltas:** salidas por caída de BTC o de las monedas en 4 h, 24 h o 7 días, filtros de
+  sobreextensión, tope de posiciones en régimen fuerte, duración de 60 a 120 h, objetivo de 10 a 14 ATR y
+  renovación más flexible. Todas rompen al menos una condición.
+
+### Avisos
+
+- **La 11b salió de una búsqueda de 132.599 reglas** (604 condiciones sobre 28 variables y 131.995 pares). Con tantas
+  pruebas, alguna regla cumple por azar. A su favor: no es un punto aislado (cumple toda una zona de umbrales) y
+  también quita perdedoras de 2023 y 2025. En contra: cambia 15 operaciones y 6 son de septiembre y octubre de 2026,
+  justo los meses que se querían mejorar.
+- **La 2d es un ajuste fino:** cumple con 5 % y 6 %, y falla con 4 % y con 7 %. Su ganancia (+50 puntos de total)
+  viene de 2024 y es la menos fiable de las tres.
+- **La 3e se apoya en 6 operaciones** y la más simple de explicar: es la salida de protección aplicada a la entrada.
+- **2022 no cambia** con ninguna de las tres (casi no hubo régimen fuerte): no hay un año fuera de muestra que las
+  confirme.
+- Octubre no llega a positivo: queda en −0,11 %.
+
+**Decisión:** se adopta la 2d+3e+11b como estrategia vigente (etapa 9). Total +573,4 %, caída máxima −3,48 %, 33
+meses positivos de 47 y 7 de 11 en 2026. Octubre de 2026 queda en −0,11 % y noviembre en +2,81 %. La versión final
+anterior (7e) queda como base de comparación.

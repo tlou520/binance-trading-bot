@@ -1,4 +1,7 @@
-"""Gráficos del resumen ilustrado (doc/resumen-ilustrado.md). Uso: python graficos.py (después de meses6.py, meses7.py y meses8.py)."""
+"""Gráficos del resumen ilustrado (doc/resumen-ilustrado.md). Uso: python graficos.py (después de meses6.py y meses9.py).
+
+Comparan la estrategia vigente (2d+3e+11b de meses9) con la versión final anterior (7e de meses8, la base de
+meses9). Las versiones más viejas aparecen solo como «Otras»."""
 import os
 
 import matplotlib
@@ -12,6 +15,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "output")
 IMG = os.path.join(os.path.dirname(os.path.dirname(HERE)), "doc", "img")
 BLUE, ORANGE, AQUA, RED = "#2a78d6", "#eb6834", "#1baf7a", "#e34948"
+GREY = "#b9b7b0"
+N_NEW, N_FIN, N_OLD, N_BTC = "2d+3e+11b (vigente)", "Versión final (base)", "Otras", "Comprar y mantener BTC"
 SURF, INK, INK2, MUTED, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e6e5e0"
 MES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "axes.edgecolor": GRID, "axes.labelcolor": INK2,
@@ -27,32 +32,31 @@ def pct(v, d=1):
 
 def load():
     m = pd.read_csv(os.path.join(OUT, "meses6_mensual.csv"), index_col=0)
-    m8 = pd.read_csv(os.path.join(OUT, "meses8_mensual.csv"), index_col=0)
-    m["final"], best = m8["7e"], "final"                  # versión final: 5c de meses7 más la salida 7e de meses8
+    m9 = pd.read_csv(os.path.join(OUT, "meses9_mensual.csv"), index_col=0)
+    m["final"], m["nueva"] = m9["base"], m9["2d+3e+11b"]    # base de meses9 = 7e de meses8; vigente = 2d+3e+11b
     import estrategias as E
     from mejoras import DATA20
     h = E.load("BTC", None, "2022-12-01", DATA20)          # comprar y mantener BTC, desde la apertura de 2023
     c = h.c.groupby(h.index.to_period("M")).last()
     btc = c.pct_change().dropna()
     btc.index = btc.index.astype(str)
-    d = pd.DataFrame({"final": m[best], "base": m["base"], "btc": btc.reindex(m.index).fillna(0.0)})
+    d = pd.DataFrame({"nueva": m["nueva"], "final": m["final"], "otras": m["base"], "btc": btc.reindex(m.index).fillna(0.0)})
     return d[d.index >= "2023-01"]
 
 
 def evolucion():
     # etapa: (ganancia 2026 %, meses positivos 2026, caída máxima %) tomados de doc/estrategias-multimarco.md
-    st = [("Modelo de 24 h\n(primera versión)", -27.6, 4, -31.1), ("+ historia desde 2020\ny filtro de régimen", 4.7, 2, -22.6),
-          ("Modelo de 72 h\n(variante G)", 6.6, 3, -14.4), ("+ reentreno\nmensual", 5.9, 3, -6.1),
-          ("+ acuerdo 24 h, umbral,\nobjetivo y BNB", 13.2, 5, -5.4), ("+ fuera de régimen,\nrenovar y noticias", 19.6, 5, -5.4),
-          ("+ tope en\nrégimen débil", 21.4, 7, -5.4),
-          ("Versión final\n(salida de protección)", 22.1, 7, -3.5)]
-    fig, ax = plt.subplots(1, 3, figsize=(12, 4.8), sharey=True)
+    st = [("Otras · etapa 1", -27.6, 4, -31.1), ("Otras · etapa 2", 4.7, 2, -22.6), ("Otras · etapa 3", 6.6, 3, -14.4),
+          ("Otras · etapa 4", 5.9, 3, -6.1), ("Otras · etapa 5", 13.2, 5, -5.4), ("Otras · etapa 6", 19.6, 5, -5.4),
+          ("Otras · etapa 7", 21.4, 7, -5.4), ("Versión final (base)\netapa 8", 22.1, 7, -3.5),
+          ("2d+3e+11b (vigente)\netapa 9", 26.2, 7, -3.5)]
+    fig, ax = plt.subplots(1, 3, figsize=(12, 5.2), sharey=True)
     y = np.arange(len(st))[::-1]
     for a, (k, title, fmt) in zip(ax, ((1, "Ganancia de 2026", lambda v: pct(v)),
                                        (2, "Meses positivos de 2026 (de 11)", lambda v: str(v)),
                                        (3, "Caída máxima", lambda v: pct(v)))):
         v = [s[k] for s in st]
-        col = [BLUE if i == len(st) - 1 else "#86b6ef" for i in range(len(st))]
+        col = [BLUE if i == len(st) - 1 else ORANGE if i == len(st) - 2 else GREY for i in range(len(st))]
         a.barh(y, v, height=0.62, color=col)
         a.axvline(0, color=MUTED, lw=0.8)
         span = max(abs(min(v)), abs(max(v)))
@@ -67,20 +71,20 @@ def evolucion():
         a.tick_params(length=0)
     ax[0].set_yticks(y, [s[0] for s in st], color=INK2)
     ax[0].tick_params(axis="y", pad=14)
-    fig.suptitle("Cómo cambió la estrategia en cada etapa", x=0.01, ha="left", fontweight="bold", fontsize=13)
+    fig.suptitle("De las versiones anteriores a la estrategia vigente", x=0.01, ha="left", fontweight="bold", fontsize=13)
     fig.tight_layout(rect=(0, 0, 1, 0.95))
     fig.savefig(os.path.join(IMG, "mt-evolucion.png"), dpi=160)
 
 
 def meses_2026(d):
-    m = 100 * d.loc[d.index >= "2026-01", ["base", "final"]]
+    m = 100 * d.loc[d.index >= "2026-01", ["final", "nueva"]]
     x = np.arange(len(m))
     fig, ax = plt.subplots(figsize=(12.5, 4.6))
     w = 0.42
-    ax.bar(x - w / 2 - 0.01, m.base, w, color=ORANGE, label="Antes (2+3+6+7)")
-    ax.bar(x + w / 2 + 0.01, m.final, w, color=BLUE, label="Versión final")
+    ax.bar(x - w / 2 - 0.01, m.final, w, color=ORANGE, label=N_FIN)
+    ax.bar(x + w / 2 + 0.01, m.nueva, w, color=BLUE, label=N_NEW)
     ax.axhline(0, color=MUTED, lw=0.8)
-    for xi, (a, b) in enumerate(zip(m.base, m.final)):
+    for xi, (a, b) in enumerate(zip(m.final, m.nueva)):
         for dx, v in ((-w / 2, a), (w / 2, b)):
             if abs(v) > 0.005:
                 ax.text(xi + dx, v + (0.5 if v >= 0 else -0.5), f"{v:+.2f}".replace(".", ",").replace("-", "−"),
@@ -91,13 +95,13 @@ def meses_2026(d):
     ax.set_axisbelow(True)
     ax.set_ylim(m.values.min() - 2.5, m.values.max() + 3)
     ax.legend(frameon=False, loc="upper left")
-    ax.set_title("2026 mes a mes: antes y después")
+    ax.set_title("2026 mes a mes: versión final (base) y 2d+3e+11b")
     fig.tight_layout()
     fig.savefig(os.path.join(IMG, "mt-meses-2026.png"), dpi=160)
 
 
 def mapa(d):
-    g = (100 * d.final).to_frame("v")
+    g = (100 * d.nueva).to_frame("v")
     g["a"], g["m"] = [int(i[:4]) for i in g.index], [int(i[5:7]) for i in g.index]
     t = g.pivot(index="a", columns="m", values="v").reindex(columns=range(1, 13))
     cmap = LinearSegmentedColormap.from_list("div", [RED, "#f0efec", BLUE])
@@ -117,7 +121,7 @@ def mapa(d):
     ax.tick_params(which="both", length=0)
     for s in ax.spines.values():
         s.set_visible(False)
-    ax.set_title("Versión final: ganancia de cada mes (% de la cuenta). Azul gana, rojo pierde, 0 es un mes sin operar")
+    ax.set_title("2d+3e+11b: ganancia de cada mes (% de la cuenta). Azul gana, rojo pierde, 0 es un mes sin operar")
     fig.tight_layout()
     fig.savefig(os.path.join(IMG, "mt-mapa-meses.png"), dpi=160)
 
@@ -126,15 +130,15 @@ def capital(d):
     eq = 100 * (1 + d).cumprod()
     x = pd.PeriodIndex(eq.index, freq="M").to_timestamp(how="end")
     fig, ax = plt.subplots(figsize=(11, 4.6))
-    for k, c, n in (("btc", AQUA, "Comprar y mantener BTC"), ("base", ORANGE, "Antes (2+3+6+7)"), ("final", BLUE, "Versión final")):
+    for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
         ax.plot(x, eq[k], color=c, lw=2, label=n)
-        ax.text(x[-1] + pd.Timedelta(days=12), eq[k].iloc[-1] * {"final": 1.09, "base": 0.93}.get(k, 1.0),
+        ax.text(x[-1] + pd.Timedelta(days=12), eq[k].iloc[-1] * {"nueva": 1.16, "final": 0.99, "otras": 1.04, "btc": 0.9}.get(k, 1.0),
                 f"{n}: {eq[k].iloc[-1]:,.0f} USDT".replace(",", "."), va="center", fontsize=9, color=INK2)
     ax.set_yscale("log")
-    ax.set_yticks([100, 200, 300, 500], ["100", "200", "300", "500"])
+    ax.set_yticks([100, 200, 300, 500, 700], ["100", "200", "300", "500", "700"])
     ax.minorticks_off()
     ax.yaxis.grid(True, color=GRID, lw=0.8)
-    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=330))
+    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Capital (USDT, escala logarítmica)")
     ax.legend(frameon=False, loc="upper left")
@@ -143,12 +147,12 @@ def capital(d):
     fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160)
     dd = 100 * (eq / eq.cummax() - 1)
     fig, ax = plt.subplots(figsize=(11, 3.4))
-    for k, c, n in (("btc", AQUA, "Comprar y mantener BTC"), ("base", ORANGE, "Antes (2+3+6+7)"), ("final", BLUE, "Versión final")):
+    for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
         ax.plot(x, dd[k], color=c, lw=2, label=n)
-        ax.text(x[-1] + pd.Timedelta(days=12), dd[k].iloc[-1] + {"final": 2.5, "base": -2.5}.get(k, 0.0),
+        ax.text(x[-1] + pd.Timedelta(days=12), dd[k].iloc[-1] + {"nueva": 5.0, "final": 0.5, "otras": -4.0}.get(k, 0.0),
                 f"{n}: peor {pct(dd[k].min())}", va="center", fontsize=9, color=INK2)
     ax.yaxis.grid(True, color=GRID, lw=0.8)
-    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=330))
+    ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Caída desde el máximo (%)")
     ax.set_title("Caída desde el máximo anterior, medida a fin de mes")
@@ -163,9 +167,8 @@ if __name__ == "__main__":
     meses_2026(d)
     mapa(d)
     capital(d)
-    y = {a: round(100 * ((1 + d.final[[i.startswith(str(a)) for i in d.index]]).prod() - 1), 2) for a in (2023, 2024, 2025, 2026)}
-    print({a: round(100 * ((1 + d.btc[[i.startswith(str(a)) for i in d.index]]).prod() - 1), 1) for a in (2023, 2024, 2025, 2026)})
+    yr = lambda c: {a: round(100 * ((1 + d[c][[i.startswith(str(a)) for i in d.index]]).prod() - 1), 2) for a in (2023, 2024, 2025, 2026)}
     dd = (1 + d).cumprod()
-    print((100 * (dd / dd.cummax() - 1).min()).round(1).to_dict())
-    print(y, "total", round(100 * ((1 + d.final).prod() - 1), 1), "btc", round(100 * ((1 + d.btc).prod() - 1), 1),
-          "base", round(100 * ((1 + d.base).prod() - 1), 1))
+    print("caída máxima:", (100 * (dd / dd.cummax() - 1).min()).round(2).to_dict())
+    for c in d.columns:
+        print(c, yr(c), "total", round(100 * ((1 + d[c]).prod() - 1), 1), "meses positivos", int((d[c] > 0).sum()), "de", len(d))
