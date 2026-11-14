@@ -35,3 +35,5 @@
 ## Documentación
 
 - Los documentos del proyecto están en `doc/` y están versionados en esta rama.
+- **Lee primero `doc/resumen-ilustrado.md` en cada sesión nueva.** Es el documento de referencia: describe la estrategia vigente, la que se está trabajando para implementarla en el bot y probarla en trading real, y lo que falta para producción. Si cambia la estrategia vigente, actualiza ese documento.
+- El detalle técnico de cada ronda de pruebas está en `doc/estrategias-multimarco.md`.

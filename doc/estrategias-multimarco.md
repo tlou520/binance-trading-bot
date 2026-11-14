@@ -495,3 +495,74 @@ Avisos:
   +4,4 % a +1,5 %. Con tope de 4 (5d) 2022 sube a +5,1 %.
 - Abril y mayo quedan positivos por poco (+0,65 % y +0,56 %).
 - La regla se eligió viendo 2026.
+
+## Subir septiembre, octubre y noviembre de 2026 sin empeorar nada
+
+Código: `meses8.py`. Punto de partida: la versión final (5c de `meses7.py`). Condiciones, todas frente a ella: 2023,
+2024, 2025 y 2026 no ganan menos (K1 a K4); la caída máxima no sube (K5); los meses positivos de 47 no bajan de 33
+(K6); los de 2026 no bajan de 7 (K7); febrero de 2026 no es negativo (K8); ni septiembre, ni octubre, ni noviembre
+empeoran (K9). Meta: que la suma de septiembre a noviembre suba (hoy −0,38 %).
+
+Doce sugerencias y, en una segunda y tercera ronda, versiones más finas de las que más ayudaron (12, 7, 3 y 1):
+
+| Variante | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Meses + 2026 | Sep | Oct | Nov | Sep a nov | Falla |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Punto de partida | +69,86 | +124,31 | +20,53 | +21,44 | +457,70 | −5,45 | 33 | 7 | +0,42 | −2,54 | +1,79 | −0,38 |  |
+| 1. No entrar en fin de semana | +76,66 | +79,29 | +15,68 | +21,89 | +346,60 | −5,45 | 30 | 7 | +0,82 | −2,54 | +1,79 | +0,02 | K2 K3 K6 |
+| 2b. Máximo 4 posiciones si BTC cae en 7 días | +65,98 | +115,77 | +24,01 | +20,89 | +436,80 | −5,45 | 32 | 7 | +0,42 | −2,54 | +1,32 | −0,84 | K1 K2 K4 K6 K9 |
+| 2a. Máximo 3 posiciones si BTC cae en 7 días | +65,27 | +111,37 | +19,85 | +19,85 | +401,80 | −5,45 | 31 | 7 | +0,42 | −2,54 | +0,45 | −1,69 | K1 K2 K3 K4 K6 K9 |
+| 3b. Parar la semana al perder 1,5 % | +66,94 | +83,46 | +18,19 | +21,44 | +339,60 | −5,45 | 31 | 7 | +0,42 | −2,54 | +1,79 | −0,38 | K1 K2 K3 K6 |
+| 3a. Parar el mes al perder 2 % | +69,86 | +114,72 | +20,30 | +21,76 | +434,30 | −5,45 | 32 | 7 | +0,42 | −2,16 | +1,66 | −0,12 | K2 K3 K6 K9 |
+| 4. Percentil 95 cuando BTC cae en 7 días | +65,24 | +139,30 | +19,55 | +17,24 | +454,30 | −5,45 | 30 | 5 | −0,36 | −2,62 | −0,87 | −3,81 | K1 K3 K4 K6 K7 K9 |
+| 5c. La moneda está sobre su EMA de 50 días | +46,31 | +118,16 | +9,25 | +17,55 | +309,90 | −3,57 | 24 | 4 | +0,42 | −2,16 | 0 | −1,75 | K1 K2 K3 K4 K6 K7 K9 |
+| 5b. La moneda está en la mitad más fuerte (7 días) | +60,07 | +95,88 | +17,74 | +16,29 | +329,30 | −4,47 | 26 | 3 | −0,48 | −2,42 | +1,57 | −1,36 | K1 K2 K3 K4 K6 K7 K9 |
+| 5a. La moneda subió en 7 días | +48,71 | +92,62 | +1,19 | +19,09 | +245,10 | −6,97 | 22 | 3 | −0,08 | −1,67 | +0,98 | −0,79 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 6c. Régimen fuerte: BTC sobre su EMA de 50 horas | +34,49 | +101,15 | +11,58 | +21,27 | +266,00 | −5,73 | 26 | 6 | −0,57 | −2,02 | +2,68 | +0,03 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 6b. Régimen fuerte: BTC subió en 7 días | +46,76 | +81,77 | +3,97 | +18,47 | +228,60 | −6,81 | 25 | 5 | −0,36 | −2,46 | 0 | −2,81 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 6a. Régimen fuerte: BTC subió en 24 h | +30,57 | +103,08 | +7,92 | +22,17 | +249,60 | −6,84 | 28 | 7 | +0,53 | −2,05 | +2,68 | +1,11 | K1 K2 K3 K5 K6 |
+| 7. Salir cuando el régimen se apaga | +74,22 | +125,18 | +19,30 | +21,75 | +469,80 | −3,48 | 32 | 6 | +0,42 | −2,54 | +2,37 | +0,19 | K3 K6 K7 |
+| 8b. Stop de catástrofe a 8 ATR | +59,95 | +121,65 | +13,48 | +18,30 | +376,00 | −7,35 | 31 | 6 | +0,44 | −2,14 | −1,04 | −2,73 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 8a. Stop de catástrofe a 6 ATR | +61,20 | +113,08 | +4,63 | +15,40 | +314,70 | −8,30 | 28 | 5 | +0,53 | −2,30 | −1,72 | −3,47 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 9. Menos tamaño cuando el ATR está sobre su mediana de 30 días | +44,13 | +76,21 | +11,56 | +11,01 | +214,50 | −4,21 | 33 | 7 | +0,50 | −2,58 | +2,17 | +0,03 | K1 K2 K3 K4 K9 |
+| 10b. Percentil 95 si las últimas 10 operaciones pierden en promedio | +65,20 | +100,33 | −7,76 | +11,56 | +240,60 | −9,06 | 21 | 5 | −0,86 | −0,49 | −0,89 | −2,22 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 10a. Percentil 95 si las últimas 6 operaciones pierden en promedio | +58,09 | +91,48 | −7,76 | +12,13 | +213,10 | −9,06 | 22 | 5 | −0,35 | −0,49 | −0,89 | −1,72 | K1 K2 K3 K4 K5 K6 K7 K9 |
+| 11. Acuerdo con el modelo de peso reciente | +56,60 | +160,54 | +27,42 | +16,76 | +507,00 | −5,45 | 30 | 5 | −0,61 | −2,84 | +0,17 | −3,27 | K1 K4 K6 K7 K9 |
+| 12. Acuerdo con el modelo de amplitud de mercado | +79,72 | +111,81 | +20,53 | +21,90 | +459,30 | −3,68 | 32 | 7 | +0,81 | −2,54 | +1,79 | +0,01 | K2 K6 |
+| 12b. Modelo de amplitud: basta con que prediga subida | +80,11 | +111,81 | +20,53 | +21,44 | +458,40 | −3,68 | 32 | 7 | +0,42 | −2,54 | +1,79 | −0,38 | K2 K6 |
+| 12c. Modelo de amplitud solo si BTC cae en 7 días | +71,76 | +123,76 | +20,53 | +21,22 | +461,50 | −5,45 | 33 | 7 | +0,24 | −2,54 | +1,79 | −0,56 | K2 K4 K9 |
+| 12d. Modelo de amplitud solo en régimen fuerte | +79,42 | +111,81 | +20,53 | +21,90 | +458,40 | −3,68 | 32 | 7 | +0,81 | −2,54 | +1,79 | +0,01 | K2 K6 |
+| 12e. Modelo de amplitud solo fuera del régimen fuerte | +70,15 | +124,31 | +20,53 | +21,44 | +458,60 | −5,45 | 33 | 7 | +0,42 | −2,54 | +1,79 | −0,38 | ninguna |
+| 7b. Salir al apagarse el régimen, solo compras hechas en régimen fuerte | +74,11 | +125,18 | +19,30 | +22,14 | +471,30 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | +0,19 | K3 |
+| 7c. Salir al apagarse el régimen solo si la posición va perdiendo | +77,07 | +125,18 | +19,84 | +21,75 | +481,80 | −3,48 | 32 | 6 | +0,42 | −2,54 | +2,37 | +0,19 | K3 K6 K7 |
+| 7d. Como 7b, y solo si la posición va perdiendo | +77,48 | +125,18 | +19,84 | +22,14 | +485,00 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | +0,19 | K3 |
+| 7e. Salir si BTC pierde su media de 200 días y la posición va perdiendo (compras en régimen fuerte) | +77,48 | +127,43 | +19,84 | +22,14 | +490,80 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | +0,19 | K3 |
+| 3c. Parar el mes al perder 2,5 % | +69,86 | +124,31 | +20,30 | +21,29 | +456,00 | −5,45 | 33 | 7 | +0,42 | −2,54 | +1,66 | −0,51 | K3 K4 K9 |
+| 1b. Sin fin de semana solo si BTC cae en 7 días | +65,63 | +100,72 | +16,14 | +22,36 | +372,40 | −7,05 | 30 | 7 | +0,82 | −2,54 | +1,79 | +0,02 | K1 K2 K3 K5 K6 |
+
+Combinaciones: 93.612 probadas. Solo 2 no empeoran nada (el punto de partida y la 12e, que no cambia septiembre a
+noviembre). **Ninguna cumple todas las condiciones y además sube los tres meses.** 24.680 suben la suma de los tres
+meses, pero rompen al menos una condición.
+
+Las que menos rompen:
+
+| Combinación | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Meses + 2026 | Sep | Oct | Nov | Falla |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Punto de partida | +69,86 | +124,31 | +20,53 | +21,44 | +457,7 | −5,45 | 33 | 7 | +0,42 | −2,54 | +1,79 | |
+| **7e** | +77,48 | +127,43 | +19,84 | +22,14 | +490,8 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | K3 |
+| 7d | +77,48 | +125,18 | +19,84 | +22,14 | +485,0 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | K3 |
+| 7b | +74,11 | +125,18 | +19,30 | +22,14 | +471,3 | −3,48 | 33 | 7 | +0,42 | −2,54 | +2,37 | K3 |
+| 12+7b+3a | +76,78 | +112,64 | +19,06 | +22,93 | +450,2 | −3,68 | 33 | 7 | +0,81 | −2,16 | +2,25 | K2 K3 |
+| 12 | +79,72 | +111,81 | +20,53 | +21,90 | +459,3 | −3,68 | 32 | 7 | +0,81 | −2,54 | +1,79 | K2 K6 |
+
+La más cercana es la 7e: si BTC cierra bajo su media de 200 días y la posición va perdiendo, se vende en la apertura
+siguiente (solo compras hechas en régimen fuerte). Cambia 18 operaciones entre 2023 y 2026 y 14 salen mejor; las que
+salen peor son dos de marzo de 2025 (DOGE de +4,94 % a −1,65 % y SOL de +7,03 % a −2,37 %) y dos de octubre de 2025.
+Por eso 2025 baja de +20,53 % a +19,84 % (0,69 puntos) y falla K3. Ninguna variante de esa regla (umbral de pérdida,
+confirmación con el modelo de 24 h o con BTC, stop mensual) recupera 2025.
+
+Septiembre y octubre no mejoran con ninguna regla que respete las condiciones: sus pérdidas vienen de compras en
+régimen fuerte que el modelo dio por buenas, y los filtros que las quitan también quitan ganadoras de 2023 y 2024.
+
+**Decisión:** se acepta la 7e como versión final, con 2025 0,69 puntos más bajo. Total +490,8 %, caída máxima
+−3,48 %, 33 meses positivos de 47 y 7 de 11 en 2026.
+

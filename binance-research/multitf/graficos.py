@@ -1,4 +1,4 @@
-"""Gráficos del resumen ilustrado (doc/resumen-ilustrado.md). Uso: python graficos.py (después de meses6.py y meses7.py)."""
+"""Gráficos del resumen ilustrado (doc/resumen-ilustrado.md). Uso: python graficos.py (después de meses6.py, meses7.py y meses8.py)."""
 import os
 
 import matplotlib
@@ -27,8 +27,8 @@ def pct(v, d=1):
 
 def load():
     m = pd.read_csv(os.path.join(OUT, "meses6_mensual.csv"), index_col=0)
-    m7 = pd.read_csv(os.path.join(OUT, "meses7_mensual.csv"), index_col=0)
-    m["final"], best = m7["5c"], "final"                  # versión final: tope de 3 posiciones en régimen débil
+    m8 = pd.read_csv(os.path.join(OUT, "meses8_mensual.csv"), index_col=0)
+    m["final"], best = m8["7e"], "final"                  # versión final: 5c de meses7 más la salida 7e de meses8
     import estrategias as E
     from mejoras import DATA20
     h = E.load("BTC", None, "2022-12-01", DATA20)          # comprar y mantener BTC, desde la apertura de 2023
@@ -44,8 +44,9 @@ def evolucion():
     st = [("Modelo de 24 h\n(primera versión)", -27.6, 4, -31.1), ("+ historia desde 2020\ny filtro de régimen", 4.7, 2, -22.6),
           ("Modelo de 72 h\n(variante G)", 6.6, 3, -14.4), ("+ reentreno\nmensual", 5.9, 3, -6.1),
           ("+ acuerdo 24 h, umbral,\nobjetivo y BNB", 13.2, 5, -5.4), ("+ fuera de régimen,\nrenovar y noticias", 19.6, 5, -5.4),
-          ("Versión final\n(tope en régimen débil)", 21.4, 7, -5.4)]
-    fig, ax = plt.subplots(1, 3, figsize=(12, 4.2), sharey=True)
+          ("+ tope en\nrégimen débil", 21.4, 7, -5.4),
+          ("Versión final\n(salida de protección)", 22.1, 7, -3.5)]
+    fig, ax = plt.subplots(1, 3, figsize=(12, 4.8), sharey=True)
     y = np.arange(len(st))[::-1]
     for a, (k, title, fmt) in zip(ax, ((1, "Ganancia de 2026", lambda v: pct(v)),
                                        (2, "Meses positivos de 2026 (de 11)", lambda v: str(v)),
