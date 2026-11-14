@@ -16,3 +16,5 @@ binance-research/analogos/output_*.log
 binance-research/analogos/__pycache__/
 binance-research/extremos/output_*.log
 binance-research/extremos/__pycache__/
+binance-research/pullback/output_*.log
+binance-research/pullback/__pycache__/

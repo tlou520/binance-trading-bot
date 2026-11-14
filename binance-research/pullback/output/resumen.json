@@ -1,0 +1,631 @@
+{
+ "periodo": "2023-01-01 00:00 a 2026-11-12 23:59 UTC",
+ "monedas": [
+  "BTCUSDT",
+  "ETHUSDT",
+  "BNBUSDT",
+  "XRPUSDT",
+  "SOLUSDT",
+  "DOGEUSDT"
+ ],
+ "costo_ida_vuelta_pct": 0.24,
+ "combinaciones": 12288,
+ "combinaciones_con_e_positivo_en_2026_n30": 168,
+ "combinaciones_positivas_los_4_anios_n20": [],
+ "walk_forward_solo_largos": {
+  "bloques": [
+   {
+    "anio": 2024,
+    "elegida": {
+     "modo": "C",
+     "gatillo": "1m",
+     "k_imp": 2.0,
+     "lado": "largo",
+     "stop": "min 2.0 %",
+     "rr": 3.0,
+     "gestion": true,
+     "horas": 4,
+     "sesion": "todo",
+     "noticias": true,
+     "btc": false
+    },
+    "entrenamiento": {
+     "n": 82,
+     "e": 0.1224186327590253,
+     "t": 0.7688769311350008,
+     "dias": 52,
+     "t_dia": 1.545676314656801
+    },
+    "resultado": {
+     "n": 156,
+     "acierto": 0.224,
+     "e": -0.416,
+     "t": -3.94,
+     "dias": 66,
+     "t_dia": -2.47,
+     "r_medio": -0.088,
+     "saldo_100_usdt_riesgo_1pct": 72.07,
+     "caida_max_pct": 28.8,
+     "motivos": {
+      "stop": 21,
+      "atasco": 81,
+      "equilibrio": 42,
+      "tiempo": 11,
+      "objetivo": 1
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 104,
+     "acierto": 0.202,
+     "e": -0.424,
+     "t": -3.35,
+     "dias": 66,
+     "t_dia": -2.63,
+     "r_medio": -0.092,
+     "saldo_100_usdt_riesgo_1pct": 80.0,
+     "caida_max_pct": 20.9,
+     "motivos": {
+      "atasco": 60,
+      "equilibrio": 23,
+      "stop": 13,
+      "tiempo": 7,
+      "objetivo": 1
+     }
+    }
+   },
+   {
+    "anio": 2025,
+    "elegida": {
+     "modo": "C",
+     "gatillo": "5m",
+     "k_imp": 2.0,
+     "lado": "largo",
+     "stop": "min 0.6 %",
+     "rr": 3.0,
+     "gestion": false,
+     "horas": 24,
+     "sesion": "europa",
+     "noticias": false,
+     "btc": true
+    },
+    "entrenamiento": {
+     "n": 115,
+     "e": 0.1407394726730291,
+     "t": 0.7294271403215509,
+     "dias": 83,
+     "t_dia": 0.2107349648075154
+    },
+    "resultado": {
+     "n": 53,
+     "acierto": 0.189,
+     "e": -0.262,
+     "t": -1.4,
+     "dias": 37,
+     "t_dia": -1.14,
+     "r_medio": 0.023,
+     "saldo_100_usdt_riesgo_1pct": 87.34,
+     "caida_max_pct": 16.3,
+     "motivos": {
+      "objetivo": 7,
+      "stop": 41,
+      "tiempo": 5
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 43,
+     "acierto": 0.186,
+     "e": -0.293,
+     "t": -1.46,
+     "dias": 37,
+     "t_dia": -1.22,
+     "r_medio": -0.046,
+     "saldo_100_usdt_riesgo_1pct": 88.15,
+     "caida_max_pct": 16.6,
+     "motivos": {
+      "objetivo": 6,
+      "stop": 34,
+      "tiempo": 3
+     }
+    }
+   },
+   {
+    "anio": 2026,
+    "elegida": {
+     "modo": "B",
+     "gatillo": "5m",
+     "k_imp": 2.0,
+     "lado": "largo",
+     "stop": "min 1.2 %",
+     "rr": 1.0,
+     "gestion": false,
+     "horas": 24,
+     "sesion": "todo",
+     "noticias": false,
+     "btc": true
+    },
+    "entrenamiento": {
+     "n": 95,
+     "e": 0.04204644906418372,
+     "t": 0.2558488625360946,
+     "dias": 89,
+     "t_dia": 0.30759195352283225
+    },
+    "resultado": {
+     "n": 18,
+     "acierto": 0.222,
+     "e": -0.675,
+     "t": -2.66,
+     "dias": 18,
+     "t_dia": -2.66,
+     "r_medio": -0.362,
+     "saldo_100_usdt_riesgo_1pct": 90.29,
+     "caida_max_pct": 9.7,
+     "motivos": {
+      "stop": 11,
+      "objetivo": 3,
+      "tiempo": 4
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 18,
+     "acierto": 0.222,
+     "e": -0.675,
+     "t": -2.66,
+     "dias": 18,
+     "t_dia": -2.66,
+     "r_medio": -0.362,
+     "saldo_100_usdt_riesgo_1pct": 90.29,
+     "caida_max_pct": 9.7,
+     "motivos": {
+      "stop": 11,
+      "objetivo": 3,
+      "tiempo": 4
+     }
+    }
+   }
+  ],
+  "total": {
+   "n": 227,
+   "acierto": 0.216,
+   "e": -0.401,
+   "t": -4.6,
+   "dias": 121,
+   "t_dia": -3.37,
+   "r_medio": -0.084,
+   "saldo_100_usdt_riesgo_1pct": 56.83,
+   "caida_max_pct": 43.2,
+   "motivos": {
+    "stop": 73,
+    "atasco": 81,
+    "equilibrio": 42,
+    "tiempo": 20,
+    "objetivo": 11
+   }
+  },
+  "por_anio": {
+   "2023": {
+    "n": 0
+   },
+   "2024": {
+    "n": 156,
+    "acierto": 0.224,
+    "e": -0.416,
+    "t": -3.94,
+    "dias": 66,
+    "t_dia": -2.47,
+    "r_medio": -0.088,
+    "saldo_100_usdt_riesgo_1pct": 72.07,
+    "caida_max_pct": 28.8,
+    "motivos": {
+     "stop": 21,
+     "atasco": 81,
+     "equilibrio": 42,
+     "tiempo": 11,
+     "objetivo": 1
+    }
+   },
+   "2025": {
+    "n": 53,
+    "acierto": 0.189,
+    "e": -0.262,
+    "t": -1.4,
+    "dias": 37,
+    "t_dia": -1.14,
+    "r_medio": 0.023,
+    "saldo_100_usdt_riesgo_1pct": 87.34,
+    "caida_max_pct": 16.3,
+    "motivos": {
+     "objetivo": 7,
+     "stop": 41,
+     "tiempo": 5
+    }
+   },
+   "2026": {
+    "n": 18,
+    "acierto": 0.222,
+    "e": -0.675,
+    "t": -2.66,
+    "dias": 18,
+    "t_dia": -2.66,
+    "r_medio": -0.362,
+    "saldo_100_usdt_riesgo_1pct": 90.29,
+    "caida_max_pct": 9.7,
+    "motivos": {
+     "stop": 11,
+     "objetivo": 3,
+     "tiempo": 4
+    }
+   }
+  },
+  "azar_mismas_salidas": {
+   "n": 227,
+   "acierto": 0.278,
+   "e": -0.059,
+   "t": -0.54,
+   "dias": 179,
+   "t_dia": -0.77,
+   "r_medio": 0.066,
+   "saldo_100_usdt_riesgo_1pct": 84.1,
+   "caida_max_pct": 29.2,
+   "motivos": {
+    "atasco": 93,
+    "tiempo": 34,
+    "equilibrio": 27,
+    "stop": 57,
+    "objetivo": 16
+   }
+  }
+ },
+ "walk_forward_largos_o_cortos": {
+  "bloques": [
+   {
+    "anio": 2024,
+    "elegida": {
+     "modo": "C",
+     "gatillo": "1m",
+     "k_imp": 2.0,
+     "lado": "largo",
+     "stop": "min 2.0 %",
+     "rr": 3.0,
+     "gestion": true,
+     "horas": 4,
+     "sesion": "todo",
+     "noticias": true,
+     "btc": false
+    },
+    "entrenamiento": {
+     "n": 82,
+     "e": 0.1224186327590253,
+     "t": 0.7688769311350008,
+     "dias": 52,
+     "t_dia": 1.545676314656801
+    },
+    "resultado": {
+     "n": 156,
+     "acierto": 0.224,
+     "e": -0.416,
+     "t": -3.94,
+     "dias": 66,
+     "t_dia": -2.47,
+     "r_medio": -0.088,
+     "saldo_100_usdt_riesgo_1pct": 72.07,
+     "caida_max_pct": 28.8,
+     "motivos": {
+      "stop": 21,
+      "atasco": 81,
+      "equilibrio": 42,
+      "tiempo": 11,
+      "objetivo": 1
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 104,
+     "acierto": 0.202,
+     "e": -0.424,
+     "t": -3.35,
+     "dias": 66,
+     "t_dia": -2.63,
+     "r_medio": -0.092,
+     "saldo_100_usdt_riesgo_1pct": 80.0,
+     "caida_max_pct": 20.9,
+     "motivos": {
+      "atasco": 60,
+      "equilibrio": 23,
+      "stop": 13,
+      "tiempo": 7,
+      "objetivo": 1
+     }
+    }
+   },
+   {
+    "anio": 2025,
+    "elegida": {
+     "modo": "C",
+     "gatillo": "5m",
+     "k_imp": 2.0,
+     "lado": "largo",
+     "stop": "min 0.6 %",
+     "rr": 3.0,
+     "gestion": false,
+     "horas": 24,
+     "sesion": "europa",
+     "noticias": false,
+     "btc": true
+    },
+    "entrenamiento": {
+     "n": 115,
+     "e": 0.1407394726730291,
+     "t": 0.7294271403215509,
+     "dias": 83,
+     "t_dia": 0.2107349648075154
+    },
+    "resultado": {
+     "n": 53,
+     "acierto": 0.189,
+     "e": -0.262,
+     "t": -1.4,
+     "dias": 37,
+     "t_dia": -1.14,
+     "r_medio": 0.023,
+     "saldo_100_usdt_riesgo_1pct": 87.34,
+     "caida_max_pct": 16.3,
+     "motivos": {
+      "objetivo": 7,
+      "stop": 41,
+      "tiempo": 5
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 43,
+     "acierto": 0.186,
+     "e": -0.293,
+     "t": -1.46,
+     "dias": 37,
+     "t_dia": -1.22,
+     "r_medio": -0.046,
+     "saldo_100_usdt_riesgo_1pct": 88.15,
+     "caida_max_pct": 16.6,
+     "motivos": {
+      "objetivo": 6,
+      "stop": 34,
+      "tiempo": 3
+     }
+    }
+   },
+   {
+    "anio": 2026,
+    "elegida": {
+     "modo": "B",
+     "gatillo": "1m",
+     "k_imp": 2.0,
+     "lado": "corto",
+     "stop": "min 2.0 %",
+     "rr": 3.0,
+     "gestion": true,
+     "horas": 24,
+     "sesion": "todo",
+     "noticias": true,
+     "btc": false
+    },
+    "entrenamiento": {
+     "n": 82,
+     "e": 0.23799986319968017,
+     "t": 0.7936124136810389,
+     "dias": 48,
+     "t_dia": 0.8756309908645994
+    },
+    "resultado": {
+     "n": 11,
+     "acierto": 0.182,
+     "e": -0.494,
+     "t": -3.87,
+     "dias": 7,
+     "t_dia": -3.82,
+     "r_medio": -0.127,
+     "saldo_100_usdt_riesgo_1pct": 97.31,
+     "caida_max_pct": 2.7,
+     "motivos": {
+      "equilibrio": 1,
+      "atasco": 10
+     }
+    },
+    "con_reglas_del_video": {
+     "n": 11,
+     "acierto": 0.182,
+     "e": -0.494,
+     "t": -3.87,
+     "dias": 7,
+     "t_dia": -3.82,
+     "r_medio": -0.127,
+     "saldo_100_usdt_riesgo_1pct": 97.31,
+     "caida_max_pct": 2.7,
+     "motivos": {
+      "atasco": 10,
+      "equilibrio": 1
+     }
+    }
+   }
+  ],
+  "total": {
+   "n": 220,
+   "acierto": 0.214,
+   "e": -0.383,
+   "t": -4.37,
+   "dias": 110,
+   "t_dia": -2.88,
+   "r_medio": -0.063,
+   "saldo_100_usdt_riesgo_1pct": 61.26,
+   "caida_max_pct": 38.7,
+   "motivos": {
+    "stop": 62,
+    "atasco": 91,
+    "equilibrio": 43,
+    "tiempo": 16,
+    "objetivo": 8
+   }
+  },
+  "por_anio": {
+   "2023": {
+    "n": 0
+   },
+   "2024": {
+    "n": 156,
+    "acierto": 0.224,
+    "e": -0.416,
+    "t": -3.94,
+    "dias": 66,
+    "t_dia": -2.47,
+    "r_medio": -0.088,
+    "saldo_100_usdt_riesgo_1pct": 72.07,
+    "caida_max_pct": 28.8,
+    "motivos": {
+     "stop": 21,
+     "atasco": 81,
+     "equilibrio": 42,
+     "tiempo": 11,
+     "objetivo": 1
+    }
+   },
+   "2025": {
+    "n": 53,
+    "acierto": 0.189,
+    "e": -0.262,
+    "t": -1.4,
+    "dias": 37,
+    "t_dia": -1.14,
+    "r_medio": 0.023,
+    "saldo_100_usdt_riesgo_1pct": 87.34,
+    "caida_max_pct": 16.3,
+    "motivos": {
+     "objetivo": 7,
+     "stop": 41,
+     "tiempo": 5
+    }
+   },
+   "2026": {
+    "n": 11,
+    "acierto": 0.182,
+    "e": -0.494,
+    "t": -3.87,
+    "dias": 7,
+    "t_dia": -3.82,
+    "r_medio": -0.127,
+    "saldo_100_usdt_riesgo_1pct": 97.31,
+    "caida_max_pct": 2.7,
+    "motivos": {
+     "equilibrio": 1,
+     "atasco": 10
+    }
+   }
+  },
+  "azar_mismas_salidas": {
+   "n": 220,
+   "acierto": 0.259,
+   "e": -0.29,
+   "t": -3.29,
+   "dias": 165,
+   "t_dia": -3.21,
+   "r_medio": -0.057,
+   "saldo_100_usdt_riesgo_1pct": 65.59,
+   "caida_max_pct": 36.5,
+   "motivos": {
+    "tiempo": 20,
+    "atasco": 93,
+    "equilibrio": 36,
+    "stop": 62,
+    "objetivo": 9
+   }
+  }
+ },
+ "video_literal": {
+  "total": {
+   "n": 2821,
+   "acierto": 0.003,
+   "e": -0.238,
+   "t": -95.58,
+   "dias": 1412,
+   "t_dia": -86.17,
+   "r_medio": 0.011,
+   "saldo_100_usdt_riesgo_1pct": 0.12,
+   "caida_max_pct": 99.9,
+   "motivos": {
+    "equilibrio": 1321,
+    "objetivo": 323,
+    "stop": 1087,
+    "atasco": 88,
+    "tiempo": 2
+   }
+  },
+  "por_anio": {
+   "2023": {
+    "n": 728,
+    "acierto": 0.004,
+    "e": -0.231,
+    "t": -43.03,
+    "dias": 365,
+    "t_dia": -32.4,
+    "r_medio": 0.061,
+    "saldo_100_usdt_riesgo_1pct": 18.58,
+    "caida_max_pct": 81.4,
+    "motivos": {
+     "equilibrio": 351,
+     "objetivo": 82,
+     "stop": 253,
+     "atasco": 40,
+     "tiempo": 2
+    }
+   },
+   "2024": {
+    "n": 732,
+    "acierto": 0.003,
+    "e": -0.242,
+    "t": -50.44,
+    "dias": 366,
+    "t_dia": -50.25,
+    "r_medio": -0.014,
+    "saldo_100_usdt_riesgo_1pct": 16.96,
+    "caida_max_pct": 83.0,
+    "motivos": {
+     "equilibrio": 318,
+     "objetivo": 102,
+     "stop": 302,
+     "atasco": 10
+    }
+   },
+   "2025": {
+    "n": 729,
+    "acierto": 0.001,
+    "e": -0.24,
+    "t": -50.14,
+    "dias": 365,
+    "t_dia": -48.92,
+    "r_medio": 0.002,
+    "saldo_100_usdt_riesgo_1pct": 17.38,
+    "caida_max_pct": 82.6,
+    "motivos": {
+     "equilibrio": 334,
+     "stop": 289,
+     "atasco": 17,
+     "objetivo": 89
+    }
+   },
+   "2026": {
+    "n": 632,
+    "acierto": 0.003,
+    "e": -0.241,
+    "t": -48.81,
+    "dias": 316,
+    "t_dia": -50.89,
+    "r_medio": -0.009,
+    "saldo_100_usdt_riesgo_1pct": 21.71,
+    "caida_max_pct": 78.3,
+    "motivos": {
+     "atasco": 21,
+     "stop": 243,
+     "equilibrio": 318,
+     "objetivo": 50
+    }
+   }
+  }
+ }
+}
