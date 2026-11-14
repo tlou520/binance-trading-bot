@@ -65,6 +65,34 @@ flowchart TD
 | Riesgo | 1/6 del capital por operación, una por moneda; el mes se detiene al perder 3 % |
 | Costo | 0,19 % por operación (comisión pagada con BNB más deslizamiento) |
 
+### Qué es el ATR
+
+ATR significa *Average True Range* (rango verdadero promedio). Mide cuánto se mueve el precio de una moneda en una hora normal, sin importar si sube o baja. Sirve para que el objetivo de ganancia se adapte a cada moneda: una moneda tranquila tiene un objetivo cercano y una moneda agitada tiene un objetivo más lejano.
+
+Se calcula en dos pasos, con velas de 1 hora:
+
+1. **Rango verdadero** de cada hora: el mayor de estos tres valores.
+
+   | Valor | Qué mide |
+   |---|---|
+   | máximo − mínimo | El recorrido dentro de la hora |
+   | \|máximo − cierre anterior\| | El recorrido si hubo un salto hacia arriba |
+   | \|mínimo − cierre anterior\| | El recorrido si hubo un salto hacia abajo |
+
+2. **Promedio** del rango verdadero de las últimas horas, con suavizado de Wilder de 14 períodos:
+
+   ```
+   ATR(hoy) = ATR(ayer) × 13/14 + rango verdadero(hoy) × 1/14
+   ```
+
+El bot usa el ATR como porcentaje del precio (ATR ÷ cierre). El objetivo de venta es:
+
+```
+precio objetivo = precio de entrada × (1 + 12 × ATR en porcentaje)
+```
+
+Ejemplo: se compra a 100 y el ATR de esa hora es 0,5 % del precio. El objetivo es 12 × 0,5 % = 6 %, es decir, vender a 106. Si el precio no llega a 106 en 72 horas, se vende al precio que haya en ese momento.
+
 ## Resultados de la versión final
 
 ![Capital](img/mt-capital.png)
