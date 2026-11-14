@@ -284,3 +284,116 @@ bajo su media de 200 días) y solo si el modelo de 24 h también predice subida;
 
 Avisos: gana menos que la base en 2023 (+64,0 % frente a +82,6 %); agosto aporta casi toda la ganancia de 2026; y
 se eligió entre 120 combinaciones viendo 2026, así que la ventaja real será menor.
+
+## Ocho mejoras sobre 2+3+6+7 (septiembre a noviembre y 6/11)
+
+Base: combinación 2+3+6+7 (5/11 y +13,20 % en 2026). Código: `meses4.py`. Condiciones en 2026: septiembre, octubre y
+noviembre mejores que +0,36, −2,88 y +1,52 (C1); año positivo (C2); al menos 6 meses positivos (C3).
+
+| Variante | Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov | Positivos | 2026 | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Base 2+3+6+7 | +0,28 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +14,31 | +0,36 | −2,88 | +1,52 | 5/11 | +13,20 % | |
+| **8. Capital sin usar en Earn flexible (2 % anual)** | +0,45 | +0,15 | +0,17 | +1,28 | −1,18 | +0,16 | +0,17 | +14,45 | +0,50 | −2,73 | +1,57 | **9/11** | **+14,98 %** | **Sí** |
+| 8b. Earn al 4 % anual | +0,61 | +0,30 | +0,33 | +1,42 | −1,04 | +0,32 | +0,33 | +14,58 | +0,64 | −2,59 | +1,61 | 9/11 | +16,74 % | Sí |
+| 7. Parar el mes en −2 % | +0,28 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +14,31 | +0,36 | −2,51 | +1,40 | 5/11 | +13,50 % | No (C1, C3) |
+| 6. Máximo 3 posiciones | +0,28 | 0 | 0 | +2,05 | −0,55 | 0 | 0 | +5,34 | +0,36 | −2,37 | +0,18 | 5/11 | +5,24 % | No (C1, C3) |
+| 5. Pausa de 3 días tras pérdida | +0,28 | 0 | 0 | +1,13 | −1,95 | 0 | 0 | +13,99 | −0,47 | −2,88 | +1,52 | 4/11 | +11,23 % | No (C1, C3) |
+| 4. Sin entrar con volatilidad alta de BTC | +0,28 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +14,56 | +0,33 | −2,88 | +2,68 | 5/11 | +14,71 % | No (C1, C3) |
+| 3. Solo las 3 más fuertes a 28 días | 0 | 0 | 0 | +2,05 | −1,49 | 0 | 0 | +6,65 | +0,99 | −1,86 | +0,45 | 4/11 | +6,74 % | No (C1, C3) |
+| 2. Stop a la entrada tras +6 ATR | +0,28 | 0 | 0 | +1,27 | −1,61 | 0 | 0 | +13,48 | +0,77 | −2,88 | +0,51 | 5/11 | +11,53 % | No (C1, C3) |
+| 1. Cortos bajo el percentil 2 (futuros) | +0,35 | +4,98 | +4,47 | +1,13 | −1,31 | −3,93 | 0 | +14,31 | +0,36 | −2,88 | +1,52 | 7/11 | +19,35 % | No (C1) |
+
+Combinaciones (247 probadas; 10 cumplen las tres, 4 de ellas sin futuros; todas las que cumplen sin futuros incluyen
+la 8):
+
+| Combinación | Sep | Oct | Nov | Positivos | 2026 | 2023 | 2024 | 2025 | Meses + (47) | Caída máx. |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **8 sola** | +0,50 | −2,73 | +1,57 | 9/11 | +14,98 % | +66,4 % | +121,6 % | +20,2 % | 37 | −5,3 % |
+| 4+7+8 | +0,47 | −2,35 | +2,73 | 9/11 | +16,98 % | +40,5 % | +92,1 % | +4,3 % | 34 | −11,9 % |
+| 4+8 | +0,47 | −2,73 | +2,73 | 9/11 | +16,53 % | +40,6 % | +106,2 % | +4,3 % | 35 | −11,9 % |
+| 2+4+7+8 | +0,88 | −2,35 | +1,73 | 9/11 | +16,11 % | +38,1 % | +75,3 % | +3,1 % | 34 | −11,9 % |
+| 1+8 (futuros) | +0,50 | −2,73 | +1,57 | 8/11 | +21,06 % | +66,3 % | +89,3 % | +3,8 % | 32 | −16,5 % |
+| Base | +0,36 | −2,88 | +1,52 | 5/11 | +13,20 % | +64,0 % | +118,4 % | +18,2 % | 31 | −5,4 % |
+
+**Se queda la 8 sola.** Es la única que cumple las tres sin empeorar ningún año. Las combinaciones con la 4 ganan algo
+más en 2026 pero pierden mucho en 2023 y 2025.
+
+Avisos: la 8 no es operativa de trading sino interés sobre el USDT sin usar; el 2 % anual es un supuesto que hay que
+comprobar en Binance Earn. Sin la 8, ninguna mejora de trading en spot cumple las tres condiciones: octubre sigue
+entre −2,9 % y −1,1 % en todas.
+
+## Diez mejoras solo de trading sobre 2+3+6+7
+
+La mejora 8 de la ronda anterior (Earn flexible) queda descartada: el proyecto es de trading y no se cuentan
+intereses. Código: `meses5.py` (`--combos` para las combinaciones). Condiciones en 2026: septiembre, octubre y
+noviembre mejores que +0,36, −2,88 y +1,52 (C1) y año positivo (C2). Tener 6 meses positivos ya no es obligatorio.
+
+| Variante | Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov | Positivos | 2026 | Cumple |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Base 2+3+6+7 | +0,28 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +14,31 | +0,36 | −2,88 | +1,52 | 5/11 | +13,20 % | |
+| 10. No entrar en fin de semana | +0,28 | 0 | 0 | +1,19 | −1,69 | 0 | 0 | +13,73 | +0,76 | −2,88 | +1,52 | 5/11 | +12,70 % | No |
+| 9. No entrar cerca de noticias | +0,28 | 0 | 0 | −0,26 | −0,02 | 0 | 0 | +14,31 | +0,36 | −2,54 | +1,79 | 4/11 | +13,80 % | No |
+| 8. BTC subió en 24 h | 0 | 0 | 0 | +1,37 | −1,50 | 0 | 0 | +13,25 | +0,47 | −2,39 | +2,68 | 4/11 | +13,86 % | **Sí** |
+| 7. Modelo predice subida de BTC | 0 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +16,69 | −0,54 | −3,18 | +1,66 | 3/11 | +14,02 % | No |
+| 6. Renovar sin costo | +0,28 | 0 | 0 | +1,13 | −1,28 | 0 | 0 | +14,31 | +0,42 | −2,88 | +1,52 | 5/11 | +13,31 % | No |
+| 5. Orden límite a 0,5 ATR | 0 | 0 | 0 | +0,62 | −1,43 | 0 | 0 | +15,11 | +0,08 | −2,53 | +2,03 | 4/11 | +13,62 % | No |
+| 5b. Orden límite a 0,25 ATR | +0,32 | 0 | 0 | +0,19 | −1,68 | 0 | 0 | +14,23 | +0,78 | −2,31 | +1,77 | 5/11 | +13,10 % | **Sí** |
+| 4. Compras fuera de régimen (percentil 98) | +1,25 | −7,03 | +0,62 | +1,13 | −1,31 | −0,96 | +4,47 | +20,18 | +0,36 | −2,88 | +1,52 | 7/11 | +16,31 % | No |
+| 3. Salir si el modelo de 24 h predice caída | +0,08 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +7,55 | −0,67 | −3,27 | −1,52 | 3/11 | +1,64 % | No |
+| 2. Umbral propio por moneda | −2,63 | 0 | 0 | +0,78 | −2,12 | 0 | 0 | +12,52 | −0,79 | −3,22 | +0,66 | 3/11 | +4,46 % | No |
+| 1. Más peso a lo reciente (12 meses) | −0,90 | 0 | 0 | 0 | −2,03 | 0 | 0 | +12,42 | −3,48 | −5,62 | −2,90 | 1/11 | −3,45 % | No |
+
+Combinaciones de 4, 5, 6, 8, 9 y 10 (88 probadas; 68 cumplen C1 y C2). Las más equilibradas:
+
+| Combinación | Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov | Positivos | 2026 | 2023 | 2024 | 2025 | Meses + (47) | Caída máx. |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **4+5b+6+9** | +1,34 | −6,71 | 0 | +0,19 | −0,65 | −0,92 | +4,67 | +18,66 | +0,81 | −2,01 | +1,99 | 6/11 | +16,65 % | +65,7 % | +103,1 % | +22,7 % | 34 | −8,0 % |
+| 4+5b+9 | +1,34 | −6,71 | 0 | +0,19 | −0,65 | −0,92 | +4,67 | +18,66 | +0,78 | −2,01 | +1,99 | 6/11 | +16,61 % | +65,0 % | +102,0 % | +22,6 % | 34 | −8,0 % |
+| 4+5b | +1,34 | −6,71 | 0 | +0,19 | −1,65 | −0,92 | +4,67 | +18,66 | +0,78 | −2,31 | +1,77 | 6/11 | +14,84 % | +62,6 % | +107,6 % | +20,5 % | 34 | −8,9 % |
+| 4+5b+6+10 | +0,32 | +6,75 | 0 | −0,38 | −2,18 | −0,60 | +4,67 | +17,99 | +1,20 | −2,31 | +1,77 | 6/11 | +28,90 % | +58,6 % | +71,9 % | +16,6 % | 29 | −5,6 % |
+| 4+5+6+8+9+10 | 0 | 0 | 0 | 0 | −0,65 | −0,56 | 0 | +19,75 | +0,47 | −1,53 | +2,92 | 3/11 | +20,45 % | +20,3 % | +47,8 % | +2,4 % | 19 | −7,0 % |
+| 5b sola | +0,32 | 0 | 0 | +0,19 | −1,68 | 0 | 0 | +14,23 | +0,78 | −2,31 | +1,77 | 5/11 | +13,10 % | +63,8 % | +107,6 % | +18,7 % | 33 | −5,3 % |
+| Base | +0,28 | 0 | 0 | +1,13 | −1,31 | 0 | 0 | +14,31 | +0,36 | −2,88 | +1,52 | 5/11 | +13,20 % | +64,0 % | +118,4 % | +18,2 % | 31 | −5,4 % |
+
+**Se propone 4+5b+6+9:** sobre la base, comprar fuera de régimen solo sobre el percentil 98, entrar con orden límite
+0,25 ATR por debajo de la apertura (hasta 6 h), no pagar costo al renovar una posición y no entrar cerca de FOMC o
+empleo de EE. UU. Cumple C1 y C2, llega a 6/11 y mantiene 2023 a 2025 cerca de la base. A cambio, febrero pasa a
+−6,71 % y la caída máxima sube de −5,4 % a −8,0 %.
+
+Octubre sigue negativo en todas las variantes (la mejor, −1,53 %, lo logra dejando casi de operar). Las combinaciones
+se eligieron viendo 2026; la ventaja real será menor.
+
+## Versión final: ajustes a 4+5b+6+9 con cinco condiciones
+
+Código: `meses6.py`. Resumen con gráficos: [`resumen-ilustrado.md`](resumen-ilustrado.md). La combinación 4+5b+6+9
+mejoraba septiembre a noviembre, pero dejaba febrero en −6,71 %, bajaba 2024 y subía la caída máxima. Condiciones,
+todas frente a la combinación 2+3+6+7: septiembre, octubre y noviembre de 2026 mejores (C1); 2026 positivo (C2);
+febrero no negativo (C3); 2024 no baja (C4); la caída máxima no sube (C5).
+
+| Variante | Feb | Sep | Oct | Nov | Positivos | 2026 | 2024 | Caída máx. | Falla |
+|---|---|---|---|---|---|---|---|---|---|
+| Base de las condiciones (2+3+6+7) | 0 | +0,36 | −2,88 | +1,52 | 5/11 | +13,20 % | +118,4 % | −5,45 % | |
+| Punto de partida (4+5b+6+9) | −6,71 | +0,81 | −2,01 | +1,99 | 6/11 | +16,65 % | +103,1 % | −8,00 % | C3, C4, C5 |
+| 7. Quitar las compras fuera de régimen | 0 | +0,81 | −2,01 | +1,99 | 5/11 | +14,88 % | +103,1 % | −5,27 % | C4 |
+| 6. Fuera de régimen solo si BTC subió en 7 días | 0 | +0,81 | −2,01 | +1,99 | 5/11 | +19,56 % | +103,1 % | −5,27 % | C4 |
+| 5. Fuera de régimen solo si BTC subió en 24 h | 0 | +0,81 | −2,01 | +1,99 | 5/11 | +18,45 % | +103,1 % | −5,27 % | C4 |
+| 4. Fuera de régimen si el modelo de 24 h supera el costo | −6,71 | +0,81 | −2,01 | +1,99 | 6/11 | +16,78 % | +103,1 % | −8,00 % | C3, C4, C5 |
+| 3. Fuera de régimen con media posición | −3,36 | +0,81 | −2,01 | +1,99 | 6/11 | +15,89 % | +103,1 % | −5,27 % | C3, C4 |
+| 2. Fuera de régimen: una sola pérdida por mes | −6,71 | +0,81 | −2,01 | +1,99 | 5/11 | +7,08 % | +103,1 % | −8,00 % | C3, C4, C5 |
+| 1. Orden límite, o a mercado si no se llena | −6,71 | +0,81 | −2,50 | +1,99 | 6/11 | +18,28 % | +111,9 % | −7,81 % | C3, C4, C5 |
+
+Ninguna cumple sola: la orden límite (5b) es la que baja 2024, porque deja sin entrar operaciones ganadoras. De las
+83 combinaciones de las piezas, 3 cumplen las cinco condiciones, todas con entrada a mercado:
+
+| Combinación | Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov | Positivos | 2026 | 2023 | 2024 | 2025 | Meses + (47) | Caída máx. |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Fuera de régimen si BTC subió en 24 h + renovar sin costo + sin noticias** | +0,28 | +0,65 | 0 | −0,26 | −0,02 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 | 5/11 | +19,64 % | +69,9 % | +124,3 % | +20,5 % | 31 | −5,45 % |
+| Fuera de régimen si BTC subió en 7 días + renovar sin costo + sin noticias | +0,28 | 0 | 0 | −0,26 | −0,02 | 0 | 0 | +20,42 | +0,42 | −2,54 | +1,79 | 4/11 | +19,96 % | +69,1 % | +124,3 % | +20,5 % | 30 | −5,45 % |
+| Sin compras fuera de régimen + renovar sin costo + sin noticias | +0,28 | 0 | 0 | −0,26 | −0,02 | 0 | 0 | +14,31 | +0,42 | −2,54 | +1,79 | 4/11 | +13,87 % | +69,0 % | +124,3 % | +20,5 % | 30 | −5,45 % |
+
+**Versión final:** la primera. Es la 2+3+6+7 más tres reglas: comprar fuera de régimen solo sobre el percentil 98 y
+si BTC subió en las últimas 24 h, mantener la posición sin pagar otra comisión si la señal sigue a las 72 h, y no
+entrar cerca de FOMC o empleo de EE. UU. Total 2023-2026: +449,4 %.
+
+Avisos: la mejora de septiembre a noviembre es pequeña (+0,06, +0,34 y +0,27 puntos); la subida del año viene de
+agosto (+20,42 %); abril pasa de +1,13 % a −0,26 % por el filtro de noticias; y las reglas se eligieron viendo 2026.

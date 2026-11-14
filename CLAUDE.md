@@ -1,5 +1,11 @@
 # Instrucciones del proyecto
 
+## Objetivo del proyecto
+
+- Esto es un proyecto de **trading**: la ganancia debe venir de comprar y vender, no de intereses.
+- No propongas ni cuentes como mejora productos de interés o rendimiento pasivo (Binance Earn flexible o a plazo, staking, préstamos, ahorro). Tampoco los uses para volver positivo un mes en un backtest.
+- Las estrategias se juzgan solo por el resultado de sus operaciones después de costos.
+
 ## Git
 
 - El comando de git de este usuario es `git2`, no `git`. Usa `git2` en todos los comandos de git que sugieras o ejecutes.

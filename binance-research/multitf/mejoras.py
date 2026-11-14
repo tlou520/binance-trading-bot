@@ -61,10 +61,11 @@ def add_barriers(P, ksl=2.0, ktp=4.0):
         h["tb_be"] = (sl + E.COST) / (sl + tp)             # probabilidad mínima para no perder
 
 
-def predict(P, periods, target="y24", window=None, clf=False, gap=26, mask=None, min_rows=20000, seeds=(0,)):
+def predict(P, periods, target="y24", window=None, clf=False, gap=26, mask=None, min_rows=20000, seeds=(0,), halflife=None):
     """Para cada periodo (t0, t1) entrena solo con datos anteriores a t0 (los últimos `window` meses si se indica)
     y predice el periodo. El 20 % final del entrenamiento fija los umbrales. Devuelve predicciones y umbrales.
     `gap` son las horas de separación entre entrenamiento y periodo juzgado (más que el horizonte del objetivo).
+    `halflife` (meses): pesa más los datos recientes; cada `halflife` meses de antigüedad el peso baja a la mitad.
     `seeds`: con varias semillas se promedian las predicciones de varios modelos.
     `mask` ({moneda: serie booleana}) limita las horas con las que se entrena y predice (modelo por régimen)."""
     import lightgbm as lgb
@@ -83,8 +84,11 @@ def predict(P, periods, target="y24", window=None, clf=False, gap=26, mask=None,
         u = tr.index.unique().sort_values()
         cut = u[int(len(u) * 0.8)]
         fit, val = tr[tr.index < cut - gap * H], tr[tr.index >= cut]
-        mdls = [(lgb.LGBMClassifier if clf else lgb.LGBMRegressor)(random_state=sd, **kw).fit(fit[E.FEATS], fit[target])
-                for sd in seeds]
+        w = None
+        if halflife:
+            w = 0.5 ** (((t0 - fit.index) / pd.Timedelta(days=30.44)).values / halflife)
+        mdls = [(lgb.LGBMClassifier if clf else lgb.LGBMRegressor)(random_state=sd, **kw).fit(
+            fit[E.FEATS], fit[target], sample_weight=w) for sd in seeds]
 
         def f(x, mdls=mdls):
             return np.mean([m.predict_proba(x)[:, 1] if clf else m.predict(x) for m in mdls], axis=0)
