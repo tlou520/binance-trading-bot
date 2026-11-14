@@ -8,7 +8,7 @@ y todas las tablas están en [`estrategias-multimarco.md`](estrategias-multimarc
 ## En una frase
 
 La versión final gana los cuatro años probados (2023 a 2026), con una caída máxima de −5,4 %, y en 2026 gana
-+19,6 % con 5 meses positivos de 11. Casi toda la ganancia de 2026 viene de agosto.
++21,4 % con 7 meses positivos de 11. Casi toda la ganancia de 2026 viene de agosto.
 
 ## El recorrido
 
@@ -22,7 +22,8 @@ La versión final gana los cuatro años probados (2023 a 2026), con una caída m
 | 3. Modelo de 72 h | Predecir 3 días en lugar de 1 | Gana cerca de 2 % por operación: el costo pesa poco |
 | 4. Reentreno mensual | Un modelo nuevo cada mes | La caída máxima baja de −14,4 % a −6,1 % |
 | 5. Acuerdo, umbral, objetivo y BNB | Cuatro reglas de entrada y salida | 2026 sube a +13,2 % y 5 meses positivos |
-| 6. Versión final | Compras selectivas fuera de régimen, renovar sin costo y filtro de noticias | 2026 sube a +19,6 % sin aumentar la caída máxima |
+| 6. Fuera de régimen, renovar y noticias | Compras selectivas fuera de régimen, renovar sin costo y filtro de noticias | 2026 sube a +19,6 % sin aumentar la caída máxima |
+| 7. Tope en régimen débil | Máximo 3 posiciones abiertas cuando el régimen es débil | 2026 pasa de 5 a 7 meses positivos sin empeorar ningún año |
 
 Lo que se descartó en el camino, y por qué:
 
@@ -63,6 +64,7 @@ flowchart TD
 | Noticias | Sin entradas desde 24 h antes hasta 2 h después de FOMC o empleo de EE. UU. |
 | Salida | Al ganar 12 ATR o a las 72 h; si la señal sigue, se mantiene sin pagar otra comisión |
 | Riesgo | 1/6 del capital por operación, una por moneda; el mes se detiene al perder 3 % |
+| Tope en régimen débil | Con régimen débil (BTC bajo su media de 200 días) no se abre una compra nueva si ya hay 3 posiciones abiertas |
 | Costo | 0,19 % por operación (comisión pagada con BNB más deslizamiento) |
 
 ### Qué es el ATR
@@ -82,7 +84,7 @@ Se calcula en dos pasos, con velas de 1 hora:
 2. **Promedio** del rango verdadero de las últimas horas, con suavizado de Wilder de 14 períodos:
 
    ```
-   ATR(hoy) = ATR(ayer) × 13/14 + rango verdadero(hoy) × 1/14
+   ATR(hora actual) = ATR(hora anterior) × 13/14 + rango verdadero(hora actual) × 1/14
    ```
 
 El bot usa el ATR como porcentaje del precio (ATR ÷ cierre). El objetivo de venta es:
@@ -102,8 +104,8 @@ Ejemplo: se compra a 100 y el ATR de esa hora es 0,5 % del precio. El objetivo e
 | 2023 | +69,9 % | +155,6 % |
 | 2024 | +124,3 % | +121,3 % |
 | 2025 | +20,5 % | −6,3 % |
-| 2026 (hasta el 13 de noviembre) | +19,6 % | −22,1 % |
-| **Total** | **+449,4 %** | **+313,0 %** |
+| 2026 (hasta el 13 de noviembre) | +21,4 % | −22,1 % |
+| **Total** | **+457,7 %** | **+313,0 %** |
 
 ![Caída desde el máximo](img/mt-caida.png)
 
@@ -114,46 +116,87 @@ caída es −5,4 % frente a −49,4 % de BTC.
 
 ![Mapa de meses](img/mt-mapa-meses.png)
 
-31 de 47 meses son positivos. En 2026 son 5 de 11:
+33 de 47 meses son positivos. Ganancia de cada mes, en % de la cuenta (0 es un mes sin operaciones):
+
+| Mes | 2023 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|
+| Enero | +16,34 | +1,94 | +8,40 | +0,28 |
+| Febrero | −1,37 | +17,61 | −2,52 | +0,65 |
+| Marzo | +11,52 | +22,33 | +2,08 | 0 |
+| Abril | +5,54 | −3,11 | +0,45 | +0,65 |
+| Mayo | −3,31 | +0,68 | +3,42 | +0,56 |
+| Junio | +0,44 | +0,16 | +0,82 | −0,91 |
+| Julio | +8,34 | +1,36 | +5,56 | 0 |
+| Agosto | +1,96 | 0 | −3,48 | +20,42 |
+| Septiembre | −5,45 | −0,22 | +0,63 | +0,42 |
+| Octubre | +4,14 | +4,11 | +4,92 | −2,54 |
+| Noviembre | +6,50 | +38,29 | −0,82 | +1,79 (hasta el día 13) |
+| Diciembre | +11,79 | +7,49 | 0 | |
+| **Año** | **+69,86** | **+124,31** | **+20,53** | **+21,44** |
+| Meses positivos | 9 de 12 | 9 de 12 | 8 de 12 | 7 de 11 |
+
+En 2026 son 7 de 11:
 
 ![2026 mes a mes](img/mt-meses-2026.png)
 
-| Mes de 2026 | Antes (2+3+6+7) | Versión final |
-|---|---|---|
-| Enero | +0,28 % | +0,28 % |
-| Febrero | 0 | +0,65 % |
-| Marzo | 0 | 0 |
-| Abril | +1,13 % | −0,26 % |
-| Mayo | −1,31 % | −0,02 % |
-| Junio | 0 | −0,91 % |
-| Julio | 0 | 0 |
-| Agosto | +14,31 % | +20,42 % |
-| Septiembre | +0,36 % | +0,42 % |
-| Octubre | −2,88 % | −2,54 % |
-| Noviembre (en curso) | +1,52 % | +1,79 % |
-| **Año** | **+13,20 %** | **+19,64 %** |
+| Mes de 2026 | Etapa 5 (2+3+6+7) | Etapa 6 | Versión final |
+|---|---|---|---|
+| Enero | +0,28 % | +0,28 % | +0,28 % |
+| Febrero | 0 | +0,65 % | +0,65 % |
+| Marzo | 0 | 0 | 0 |
+| Abril | +1,13 % | −0,26 % | **+0,65 %** |
+| Mayo | −1,31 % | −0,02 % | **+0,56 %** |
+| Junio | 0 | −0,91 % | −0,91 % |
+| Julio | 0 | 0 | 0 |
+| Agosto | +14,31 % | +20,42 % | +20,42 % |
+| Septiembre | +0,36 % | +0,42 % | +0,42 % |
+| Octubre | −2,88 % | −2,54 % | −2,54 % |
+| Noviembre (en curso) | +1,52 % | +1,79 % | +1,79 % |
+| **Año** | **+13,20 %** | **+19,64 %** | **+21,44 %** |
+| Meses positivos | 5 de 11 | 5 de 11 | 7 de 11 |
 
 ## Condiciones que cumple la versión final
 
-| Condición | Antes | Versión final | Cumple |
+Frente a la etapa 6, nada empeora y los meses positivos de 2026 suben de 5 a 7:
+
+| Condición | Etapa 6 | Versión final | Cumple |
 |---|---|---|---|
-| Septiembre, octubre y noviembre mejores | +0,36 / −2,88 / +1,52 | +0,42 / −2,54 / +1,79 | Sí |
-| 2026 positivo | +13,20 % | +19,64 % | Sí |
-| Febrero no negativo | 0 | +0,65 % | Sí |
-| 2024 no baja | +118,4 % | +124,3 % | Sí |
+| 2023 no baja | +69,86 % | +69,86 % | Sí |
+| 2024 no baja | +124,31 % | +124,31 % | Sí |
+| 2025 no baja | +20,53 % | +20,53 % | Sí |
+| 2026 no baja | +19,64 % | +21,44 % | Sí |
 | La caída máxima no sube | −5,45 % | −5,45 % | Sí |
+| Los meses positivos de 47 no bajan | 31 | 33 | Sí |
+| Septiembre, octubre y noviembre no empeoran | +0,42 / −2,54 / +1,79 | +0,42 / −2,54 / +1,79 | Sí |
+| Febrero no negativo | +0,65 % | +0,65 % | Sí |
+| Al menos 7 meses positivos de 11 en 2026 | 5 | 7 | Sí |
 
 ## Límites que hay que tener presentes
 
 - **Es un backtest.** No se ha probado con dinero real ni en papel con datos nuevos.
 - **Sobreajuste.** Las reglas se eligieron entre cientos de combinaciones viendo estos mismos años, sobre todo 2026.
   La ganancia real esperable es menor que la de las tablas.
-- **2026 depende de agosto:** +20,4 % en un mes; los otros cuatro meses positivos suman menos de +3,2 %.
+- **2026 depende de agosto:** +20,4 % en un mes; los otros seis meses positivos suman cerca de +4,4 %.
+- **El tope en régimen débil se apoya en 5 operaciones.** Entre 2023 y 2026 solo quita 5 compras, todas de abril y
+  mayo de 2026 y todas perdedoras. En 2022, un año que no entra en las tablas, habría quitado operaciones ganadoras
+  (ese año pasa de +4,4 % a +1,5 %). Abril y mayo quedan positivos por poco (+0,65 % y +0,56 %).
 - **Octubre sigue negativo** (−2,54 %) y noviembre incluye una pérdida reciente de −6,09 % en BTC (10 al 13 de
   noviembre).
 - **Solo compras:** en meses bajistas lo mejor que puede hacer es no operar.
 
 Siguiente paso recomendado: correr la versión final en papel con datos nuevos antes de usar dinero.
+
+## Dónde están los resultados del backtest
+
+Todos están en `binance-research/multitf/output/`:
+
+| Archivo | Contenido |
+|---|---|
+| `meses7_resumen.json` | Último backtest: la versión final (clave `5c` dentro de `individuales`), las otras variantes y las mejores combinaciones |
+| `meses7_mensual.csv` | Ganancia de cada mes desde 2020; la versión final es la columna `5c` y la etapa 6 es `base` |
+| `meses7_combinaciones.csv` | Las combinaciones con 6 o más meses positivos en 2026 (1.990 de 15.360) |
+| `meses6_resumen.json`, `meses6_mensual.csv` | Backtest de la etapa 6 |
+| `meses*_resumen.json` anteriores | Rondas anteriores, descritas en `estrategias-multimarco.md` |
 
 ## Cómo reproducirlo
 
@@ -162,6 +205,7 @@ cd binance-research/pullback
 python descargar.py --desde 2020-01 --salida ../v3_research/tmp/k1m_2020
 cd ../multitf
 python meses6.py
+python meses7.py --combos
 python graficos.py
 ```
 

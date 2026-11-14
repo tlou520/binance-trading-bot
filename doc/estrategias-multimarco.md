@@ -397,3 +397,101 @@ entrar cerca de FOMC o empleo de EE. UU. Total 2023-2026: +449,4 %.
 
 Avisos: la mejora de septiembre a noviembre es pequeña (+0,06, +0,34 y +0,27 puntos); la subida del año viene de
 agosto (+20,42 %); abril pasa de +1,13 % a −0,26 % por el filtro de noticias; y las reglas se eligieron viendo 2026.
+
+## De 5 a 7 meses positivos en 2026 sin empeorar nada
+
+Código: `meses7.py`. Punto de partida: la versión anterior (fuera de régimen si BTC subió en 24 h, renovar sin costo
+y sin noticias). Condiciones, todas frente a ella: 2023, 2024, 2025 y 2026 no ganan menos (K1 a K4); la caída máxima
+no sube (K5); los meses positivos de 47 no bajan (K6); septiembre, octubre y noviembre de 2026 no empeoran (K7);
+febrero de 2026 no es negativo (K8). Meta: al menos 7 meses positivos de 11 en 2026.
+
+Régimen débil: el régimen mixto está activo pero BTC está bajo su media de 200 días.
+
+| Variante | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Meses + 2026 | Falla |
+|---|---|---|---|---|---|---|---|---|---|
+| Punto de partida | +69,86 | +124,31 | +20,53 | +19,64 | +449,4 | −5,45 | 31 | 5 | |
+| 1a. Objetivo de venta a 8 ATR | +50,17 | +90,84 | +18,49 | +24,57 | +323,0 | −5,45 | 30 | 6 | K1 K2 K3 K6 K7 |
+| 1b. Objetivo de venta a 16 ATR | +67,36 | +91,22 | +20,64 | +20,92 | +366,9 | −5,45 | 31 | 6 | K1 K2 |
+| 1c. Duración máxima de 48 h | +50,14 | +124,40 | +21,36 | +10,49 | +351,8 | −7,96 | 31 | 5 | K1 K4 K5 K7 |
+| 2a. Tras perder en una moneda, 48 h sin volver a ella | +63,16 | +105,46 | +10,97 | +17,57 | +337,4 | −7,38 | 30 | 4 | K1 a K7 |
+| 2b. Tras dos pérdidas seguidas, 48 h sin comprar | +64,90 | +105,30 | +14,99 | +15,58 | +349,9 | −5,63 | 28 | 4 | K1 a K7 |
+| 3a. Proteger el mes: tras +0,5 %, parar si baja a +0,1 % | +69,86 | +114,72 | +16,10 | +17,68 | +398,4 | −5,45 | 29 | 5 | K2 K3 K4 K6 |
+| 3b. Proteger el mes: tras +1 %, parar si baja a +0,3 % | +69,86 | +114,72 | +16,10 | +20,74 | +411,3 | −5,45 | 29 | 5 | K2 K3 K6 |
+| 3c. Proteger el mes: tras +2 %, parar si baja a +1 % | +66,89 | +114,72 | +11,33 | +19,64 | +377,3 | −6,97 | 29 | 5 | K1 K2 K3 K5 K6 |
+| 4a. Régimen débil: exigir percentil 98 | +67,76 | +124,31 | +20,53 | +20,91 | +448,4 | −5,45 | 31 | 5 | K1 |
+| 4b. Régimen débil: exigir que BTC subió en 24 h | +69,82 | +124,31 | +20,53 | +18,09 | +442,2 | −5,45 | 30 | 4 | K1 K4 K6 |
+| 4c. Régimen débil: media posición | +64,85 | +124,31 | +20,53 | +19,64 | +433,2 | −5,45 | 31 | 5 | K1 |
+| 4x. Régimen débil: objetivo de venta a 8 ATR | +66,09 | +124,31 | +20,53 | +20,18 | +439,7 | −5,45 | 32 | 6 | K1 |
+| 5a. Máximo 3 posiciones abiertas, siempre | +59,92 | +58,31 | +19,70 | +8,76 | +229,6 | −4,20 | 32 | 7 | K1 K2 K3 K4 K7 |
+| 5b. Máximo 4 posiciones abiertas, siempre | +62,89 | +97,51 | +23,28 | +9,55 | +334,5 | −4,59 | 33 | 7 | K1 K2 K4 K7 |
+| **5c. Máximo 3 posiciones abiertas al entrar en régimen débil** | +69,86 | +124,31 | +20,53 | +21,44 | +457,7 | −5,45 | 33 | **7** | **ninguna** |
+| 5d. Máximo 4 posiciones abiertas al entrar en régimen débil | +69,86 | +124,31 | +20,53 | +20,70 | +454,3 | −5,45 | 33 | 7 | ninguna |
+| 6a. Stop en el punto de equilibrio tras ganar 3 ATR | +64,35 | +129,96 | +12,71 | +16,62 | +396,8 | −5,45 | 33 | 5 | K1 K3 K4 K7 |
+| 6b. Stop en el punto de equilibrio tras ganar 5 ATR | +59,00 | +127,93 | +17,13 | +18,49 | +402,9 | −5,45 | 31 | 5 | K1 K3 K4 K7 |
+| 7. El modelo de 7 días también predice subida | +39,70 | +129,64 | +21,16 | +16,20 | +351,6 | −3,76 | 27 | 4 | K1 K4 K6 K7 |
+| 8a. Segundo modelo de 24 h fuera de régimen | +80,62 | +138,28 | +23,73 | +3,16 | +449,4 | −9,33 | 32 | 4 | K4 K5 K8 |
+| 8b. Segundo modelo de 24 h fuera de régimen, si BTC subió en 24 h | +78,09 | +124,31 | +20,53 | +7,70 | +418,6 | −6,11 | 30 | 5 | K4 K5 K6 K8 |
+
+2026 mes a mes (%):
+
+| Variante | Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Punto de partida | +0,28 | +0,65 | 0 | −0,26 | −0,02 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 1a | +0,28 | +0,65 | 0 | −0,87 | +1,98 | −0,56 | 0 | +22,26 | +1,84 | −2,54 | +1,16 |
+| 1b | +0,28 | +0,65 | 0 | −1,04 | +0,84 | −0,91 | 0 | +20,94 | +0,42 | −2,54 | +2,36 |
+| 1c | +0,27 | +1,04 | 0 | −0,25 | +1,19 | −0,23 | 0 | +16,63 | +0,88 | −2,24 | −5,85 |
+| 2a | +0,28 | +0,65 | 0 | −0,26 | −0,60 | −0,91 | 0 | +20,10 | −0,47 | −2,54 | +1,79 |
+| 2b | +0,28 | +0,65 | 0 | −0,26 | −1,66 | −0,91 | 0 | +20,42 | −1,37 | −2,54 | +1,79 |
+| 3a | +0,28 | +0,65 | 0 | −0,26 | −1,66 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 3b | +0,28 | +0,65 | 0 | −0,26 | −0,02 | 0 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 3c | +0,28 | +0,65 | 0 | −0,26 | −0,02 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 4a | 0 | +0,65 | 0 | 0 | +1,06 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 4b | 0 | +0,65 | 0 | −0,19 | −1,12 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 4c | +0,14 | +0,65 | 0 | −0,13 | −0,01 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 4x | +0,28 | +0,65 | 0 | −0,87 | +1,05 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 5a | +0,28 | +0,65 | 0 | +0,65 | +0,56 | −0,91 | 0 | +9,28 | +0,42 | −2,54 | +0,45 |
+| 5b | +0,28 | +0,65 | 0 | +0,26 | +0,34 | −0,91 | 0 | +9,80 | +0,42 | −2,54 | +1,32 |
+| **5c** | +0,28 | +0,65 | 0 | **+0,65** | **+0,56** | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 5d | +0,28 | +0,65 | 0 | +0,26 | +0,34 | −0,91 | 0 | +20,42 | +0,42 | −2,54 | +1,79 |
+| 6a | 0 | +0,65 | 0 | +1,77 | −1,83 | −0,56 | 0 | +17,45 | +0,89 | −2,53 | +0,98 |
+| 6b | 0 | +0,65 | 0 | +1,24 | −1,24 | −0,56 | 0 | +19,58 | +0,82 | −2,54 | +0,76 |
+| 7 | +0,28 | +0,65 | 0 | −0,26 | −0,02 | −0,91 | 0 | +20,42 | +0,53 | −3,15 | −0,63 |
+| 8a | −0,60 | −3,78 | +0,39 | −0,26 | −0,02 | −5,30 | 0 | +14,21 | +0,42 | −2,54 | +1,79 |
+| 8b | +0,28 | −3,44 | +0,64 | −0,26 | −0,02 | −2,58 | 0 | +14,21 | +0,42 | −2,54 | +1,79 |
+
+Combinaciones: 15.360 probadas.
+
+| Meses positivos en 2026 | Combinaciones | De ellas, no empeoran nada |
+|---|---|---|
+| 2 | 229 | 0 |
+| 3 | 2.061 | 0 |
+| 4 | 5.501 | 0 |
+| 5 | 5.579 | 1 (el punto de partida) |
+| 6 | 1.790 | 0 |
+| 7 | 200 | 2 (5c y 5d) |
+| 8 o más | 0 | 0 |
+
+Las que llegan a 7 meses y menos condiciones rompen:
+
+| Combinación | 2023 | 2024 | 2025 | 2026 | Total | Caída máx. | Meses + (47) | Abr | May | Falla |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **5c** | +69,86 | +124,31 | +20,53 | +21,44 | +457,7 | −5,45 | 33 | +0,65 | +0,56 | ninguna |
+| 5d | +69,86 | +124,31 | +20,53 | +20,70 | +454,3 | −5,45 | 33 | +0,26 | +0,34 | ninguna |
+| 5c+4x | +66,09 | +124,31 | +20,53 | +20,74 | +442,2 | −5,45 | 33 | +0,04 | +0,59 | K1 |
+| 5c+4c | +64,85 | +124,31 | +20,53 | +20,54 | +437,2 | −5,45 | 33 | +0,33 | +0,28 | K1 |
+| 5d+4c | +64,85 | +124,31 | +20,53 | +20,17 | +435,6 | −5,45 | 33 | +0,13 | +0,17 | K1 |
+| 8b+5c | +78,09 | +124,31 | +20,53 | +9,33 | +426,4 | −4,70 | 32 | +0,65 | +0,56 | K4 K8 |
+| 5c+3b | +69,86 | +114,72 | +16,10 | +21,44 | +414,3 | −5,45 | 31 | +0,65 | +0,56 | K2 K3 |
+
+**Versión final:** 5c sola. Con régimen débil no se abre una compra nueva si ya hay 3 posiciones abiertas; con
+régimen fuerte no hay tope. Ninguna combinación la mejora: sumarle cualquier otra pieza rompe alguna condición.
+Ninguna de las 15.360 llega a 8 meses: marzo y julio no tienen operaciones, y junio y octubre siguen negativos.
+
+Avisos:
+
+- Entre 2023 y 2026 el tope quita solo 5 compras, todas de abril y mayo de 2026 y todas perdedoras (−2,37 %, −2,27 %,
+  −0,87 %, −1,33 % y −2,17 %). Por eso 2023, 2024 y 2025 no cambian.
+- En 2022, que no entra en las tablas, el tope de 3 habría quitado 7 compras que en conjunto ganaban: ese año pasa de
+  +4,4 % a +1,5 %. Con tope de 4 (5d) 2022 sube a +5,1 %.
+- Abril y mayo quedan positivos por poco (+0,65 % y +0,56 %).
+- La regla se eligió viendo 2026.
