@@ -1,6 +1,6 @@
 # Investigación de la estrategia v3 (copia versionada)
 
-Copia del código, los modelos entrenados y los informes de la investigación de la [estrategia v3](../../doc/estrategia-v3-hacia-el-80.md). El original vive en `binance-research/data/research/`, que git ignora porque contiene ~2.9 GB de datos. Esta carpeta es una **copia**: los scripts originales siguen funcionando donde están, y lo que se cambie aquí no se refleja allí (ni al revés).
+Copia del código, los modelos entrenados y los informes de la investigación de la [estrategia v3](../../doc/referencia-compacta.md). El original vive en `binance-research/data/research/`, que git ignora porque contiene ~2.9 GB de datos. Esta carpeta es una **copia**: los scripts originales siguen funcionando donde están, y lo que se cambie aquí no se refleja allí (ni al revés).
 
 Copiado el 2026-10-23. Pesa ~7 MB; no hay ningún archivo de más de 10 MB.
 
@@ -22,7 +22,7 @@ Copiado el 2026-10-23. Pesa ~7 MB; no hay ningún archivo de más de 10 MB.
 
 ## Canal sombra de la v3 (`shadow/`)
 
-Es la prueba **prospectiva** pre-registrada de la sección 8 de [estrategia-v3-hacia-el-80.md](../../doc/estrategia-v3-hacia-el-80.md). No opera ni envía órdenes: mide qué habría hecho la v3 desde el 2026-10-01.
+Es la prueba **prospectiva** pre-registrada de la sección 8 de [referencia-compacta.md](../../doc/referencia-compacta.md). No opera ni envía órdenes: mide qué habría hecho la v3 desde el 2026-10-01.
 
 | Archivo | Qué hace |
 |---|---|

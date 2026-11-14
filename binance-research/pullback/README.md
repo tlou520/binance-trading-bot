@@ -2,7 +2,7 @@
 
 Backtest de la estrategia de *scalping* del video: dirección en 1 h, estructura de impulso y retroceso en 5 min y
 gatillo en 1 min, con velas reales de Binance spot. Proyecto aparte: no usa ni modifica las estrategias del bot.
-Explicación y resultados: [`doc/estrategia-pullback.md`](../../doc/estrategia-pullback.md).
+Explicación y resultados: [`doc/referencia-compacta.md`](../../doc/referencia-compacta.md).
 
 | Archivo | Qué hace |
 |---|---|

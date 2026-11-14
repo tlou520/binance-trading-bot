@@ -141,7 +141,7 @@ Selección de estrategias (walk-forward)
     modos, ALLOW_UNVALIDATED_STRATEGIES=1 en el .env carga en cada moneda la mejor estrategia NO validada
     (lo esperable es que pierda dinero), y TESTNET_IGNORE_MOMENTUM=1 hace que abra aunque su interruptor de
     momentum esté apagado. Cada señal, abierta o bloqueada por un filtro, queda en binance-research/orders/signals.csv.
-    Detalles en doc/matematica-del-bot.md (Parte 4, sección 14).
+    Detalles en doc/referencia-compacta.md (Parte 4, sección 14).
 
 Ejecución del Bot
 

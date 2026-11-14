@@ -2,7 +2,7 @@
 
 Backtest de la estrategia "extremo diario → cambio de estructura en 1 h → gatillo en 5 min" con datos reales de Binance
 spot. Proyecto aparte: no usa ni modifica las estrategias del bot. Explicación y resultados:
-[`doc/estrategia-extremos.md`](../../doc/estrategia-extremos.md).
+[`doc/referencia-compacta.md`](../../doc/referencia-compacta.md).
 
 | Archivo | Qué hace |
 |---|---|

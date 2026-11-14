@@ -1,8 +1,8 @@
 # Predicción por análogos
 
-Implementación del plan [`doc/plan-analogos.md`](../../doc/plan-analogos.md): buscar en el pasado los momentos más
+Implementación del plan [`doc/referencia-compacta.md`](../../doc/referencia-compacta.md): buscar en el pasado los momentos más
 parecidos al actual y usar lo que pasó después. Proyecto aparte: no usa ni modifica las estrategias del bot.
-Resultados y decisión: [`doc/resultados-analogos.md`](../../doc/resultados-analogos.md).
+Resultados y decisión: [`doc/referencia-compacta.md`](../../doc/referencia-compacta.md).
 
 | Archivo | Qué hace |
 |---|---|
