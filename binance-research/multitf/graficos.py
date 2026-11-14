@@ -152,8 +152,8 @@ def capital(d):
     for k in ("otras", "btc", "final", "nueva"):
         ax.plot(x, eq[k], color=cols[k], lw=2.2, zorder=3)
         ax.scatter([x[-1]], [eq[k].iloc[-1]], color=cols[k], s=22, zorder=4)
-    handles = [plt.Line2D([], [], color=cols[k], lw=3, label=f"{names[k]}: {eq[k].iloc[-1]:,.0f} USDT".replace(",", "."))
-               for k in ("nueva", "final", "btc", "otras")]
+    handles = [plt.Line2D([], [], color=cols[k], lw=2.4, label=f"{names[k]}\n{eq[k].iloc[-1]:,.0f} USDT".replace(",", "."))
+               for k in ("nueva", "final", "otras", "btc")]
     ax.set_yscale("log")
     ax.set_ylim(100, 1000)
     ax.set_yticks([100, 200, 300, 500, 700], ["100", "200", "300", "500", "700"])
@@ -162,9 +162,9 @@ def capital(d):
     ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=60))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Capital (USDT, escala logarítmica)")
-    leg = ax.legend(handles=handles, loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=2, frameon=False, fontsize=8,
-                    handlelength=2.0, handletextpad=0.5, columnspacing=1.2, borderaxespad=0.2)
-    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)", pad=30)
+    leg = ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), ncol=1, frameon=False, fontsize=8.5,
+                    handlelength=1.8, handletextpad=0.8, labelspacing=1.4, borderaxespad=0)
+    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)", loc="left")
     fig.tight_layout()
     fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160, bbox_inches="tight")
     dd = 100 * (eq / eq.cummax() - 1)
