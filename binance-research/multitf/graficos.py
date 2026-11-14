@@ -126,14 +126,34 @@ def mapa(d):
     fig.savefig(os.path.join(IMG, "mt-mapa-meses.png"), dpi=160)
 
 
+def end_labels(ax, x, ends, texts, log):
+    """Etiquetas al final de cada línea, con el color de la serie y separadas para no montarse."""
+    txt_col = {"btc": "#137a52", "otras": "#6f6e69", "final": "#b8451f", "nueva": "#1f5fb0"}
+    f = np.log10 if log else (lambda v: v)
+    inv = (lambda v: 10 ** v) if log else (lambda v: v)
+    gap = 0.085 if log else (ax.get_ylim()[1] - ax.get_ylim()[0]) * 0.07
+    order = sorted(ends, key=lambda k: ends[k], reverse=True)
+    pos = {k: f(ends[k]) for k in order}
+    for a, b in zip(order, order[1:]):
+        if pos[a] - pos[b] < gap:
+            pos[b] = pos[a] - gap
+    for k in order:
+        ax.annotate(texts[k], xy=(x[-1], ends[k]), xytext=(x[-1] + pd.Timedelta(days=14), inv(pos[k])),
+                    textcoords="data", va="center", fontsize=9.5, fontweight="bold", color=txt_col[k],
+                    arrowprops=dict(arrowstyle="-", color=txt_col[k], lw=0.8, shrinkA=2, shrinkB=0))
+
+
 def capital(d):
     eq = 100 * (1 + d).cumprod()
     x = pd.PeriodIndex(eq.index, freq="M").to_timestamp(how="end")
     fig, ax = plt.subplots(figsize=(11, 4.6))
     for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
-        ax.plot(x, eq[k], color=c, lw=2, label=n)
-        ax.text(x[-1] + pd.Timedelta(days=12), eq[k].iloc[-1] * {"nueva": 1.16, "final": 0.99, "otras": 1.04, "btc": 0.9}.get(k, 1.0),
-                f"{n}: {eq[k].iloc[-1]:,.0f} USDT".replace(",", "."), va="center", fontsize=9, color=INK2)
+        ax.plot(x, eq[k], color=c, lw=2.2)
+    end_labels(ax, x, {k: eq[k].iloc[-1] for k in ("btc", "otras", "final", "nueva")},
+               {"nueva": f"{N_NEW}: {eq['nueva'].iloc[-1]:,.0f} USDT".replace(",", "."),
+                "final": f"{N_FIN}: {eq['final'].iloc[-1]:,.0f} USDT".replace(",", "."),
+                "otras": f"{N_OLD}: {eq['otras'].iloc[-1]:,.0f} USDT".replace(",", "."),
+                "btc": f"{N_BTC}: {eq['btc'].iloc[-1]:,.0f} USDT".replace(",", ".")}, log=True)
     ax.set_yscale("log")
     ax.set_yticks([100, 200, 300, 500, 700], ["100", "200", "300", "500", "700"])
     ax.minorticks_off()
@@ -141,16 +161,16 @@ def capital(d):
     ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Capital (USDT, escala logarítmica)")
-    ax.legend(frameon=False, loc="upper left")
     ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)")
     fig.tight_layout()
     fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160)
     dd = 100 * (eq / eq.cummax() - 1)
     fig, ax = plt.subplots(figsize=(11, 3.4))
     for k, c, n in (("btc", AQUA, N_BTC), ("otras", GREY, N_OLD), ("final", ORANGE, N_FIN), ("nueva", BLUE, N_NEW)):
-        ax.plot(x, dd[k], color=c, lw=2, label=n)
-        ax.text(x[-1] + pd.Timedelta(days=12), dd[k].iloc[-1] + {"nueva": 5.0, "final": 0.5, "otras": -4.0}.get(k, 0.0),
-                f"{n}: peor {pct(dd[k].min())}", va="center", fontsize=9, color=INK2)
+        ax.plot(x, dd[k], color=c, lw=2.2)
+    end_labels(ax, x, {k: dd[k].iloc[-1] for k in ("btc", "otras", "final", "nueva")},
+               {k: f"{n}: peor {pct(dd[k].min())}" for k, n in (("nueva", N_NEW), ("final", N_FIN), ("otras", N_OLD), ("btc", N_BTC))},
+               log=False)
     ax.yaxis.grid(True, color=GRID, lw=0.8)
     ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=400))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
