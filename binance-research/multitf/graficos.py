@@ -162,9 +162,9 @@ def capital(d):
     ax.set_xlim(x[0], x[-1] + pd.Timedelta(days=60))
     ax.set_xticks(pd.to_datetime([f"{a}-01-01" for a in (2023, 2024, 2025, 2026)]), ["2023", "2024", "2025", "2026"])
     ax.set_ylabel("Capital (USDT, escala logarítmica)")
-    leg = ax.legend(handles=handles, loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=2, frameon=False, fontsize=9.5,
-                    handlelength=2.6, columnspacing=1.6)
-    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)", pad=44)
+    leg = ax.legend(handles=handles, loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=2, frameon=False, fontsize=8,
+                    handlelength=2.0, handletextpad=0.5, columnspacing=1.2, borderaxespad=0.2)
+    ax.set_title("100 USDT desde enero de 2023 (backtest, después de costos)", pad=30)
     fig.tight_layout()
     fig.savefig(os.path.join(IMG, "mt-capital.png"), dpi=160, bbox_inches="tight")
     dd = 100 * (eq / eq.cummax() - 1)
